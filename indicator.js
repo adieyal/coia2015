@@ -5,7 +5,8 @@ Indicator = function(ctx){
     if (ctx.node === undefined) { throw Error('No Node given'); }
     this.node = ctx.node;
 
-    this.value = ctx.value || null;
+    if (ctx.value === undefined) { throw Error('No value given'); }
+    this.value = ctx.value;
 
     this.yestext = ctx.yestext || 'YES';
     this.notext = ctx.notext || 'NO';
@@ -25,22 +26,27 @@ Indicator.prototype = {
             .attr('height', h)
             .classed('block', true);
 
-        if (value === this.yestext) {
+        if (value === true) {
             n.append('rect')
                 .attr('width', w / 2)
                 .attr('height', h)
                 .attr('x', w / 2)
                 .classed('yesblock', true);
-        } else if (value == this.notext) {
+        } else if (value === false) {
             n.append('rect')
                 .attr('width', w / 2)
                 .attr('height', h)
                 .classed('noblock', true);
-        } else if (value == null) {
+        } else if (value === null) {
             n.append('rect')
                 .attr('width', w)
                 .attr('height', h)
                 .classed('nodatablock', true);
+        } else {
+            n.append('rect')
+                .attr('width', w)
+                .attr('height', h)
+                .classed('valueblock', true);
         }
 
         n.append('text')
@@ -51,10 +57,15 @@ Indicator.prototype = {
             .attr('text-anchor', 'middle')
             .text(this.nodatatext);
 
-        if (value === this.yestext)
-            n.select('text').attr('x', w / 4 * 3).text(value);
-        else if (value === this.notext)
-            n.select('text').attr('x', w / 4).text(value);
+        if (value === true)
+            n.select('text').attr('x', w / 4 * 3).text(this.yestext);
+        else if (value === false)
+            n.select('text').attr('x', w / 4).text(this.notext);
+        else if (value === null) {
+        }
+        else {
+            n.select('text').text(value);
+        }
     }
 }
 

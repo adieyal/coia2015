@@ -14,6 +14,10 @@
             fill: #918f90;
         }
 
+        .valueblock {
+            fill: #6ba3e4;
+        }
+
         .indicator text {
             font-size: 10px;
             font-family: Arial;
@@ -29,15 +33,19 @@
         <g id="yesind" transform="translate(0, 0)"></g>
         <g id="noind" transform="translate(0, 20)"></g>
         <g id="nullind" transform="translate(0, 40)"></g>
+        <g id="val1" transform="translate(0, 60)"></g>
+        <g id="val2" transform="translate(0, 80)"></g>
     </svg>
 
     <script type='text/javascript' src='d3.v3.js'></script>
     <script type='text/javascript' src='indicator.js'></script>
 
     <script>
-        iyes = new Indicator({ value : 'YES', node : d3.select('#yesind') });  
-        ino = new Indicator({ value : 'NO', node : d3.select('#noind') });  
+        iyes = new Indicator({ value : true, node : d3.select('#yesind') });  
+        ino = new Indicator({ value : false, node : d3.select('#noind') });  
         inull = new Indicator({ value : null, node : d3.select('#nullind') });  
+        ival1 = new Indicator({ value : 54, node : d3.select('#val1') });  
+        ival2 = new Indicator({ value : "54%", node : d3.select('#val2') });  
     </script>
 </body>
 </html>
