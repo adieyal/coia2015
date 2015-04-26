@@ -1,0 +1,13 @@
+.segmentpie .segment.inactive {
+    fill: #918f90
+}
+
+.segmentpie .segment.active {
+    fill: #6ba3e4;
+}
+
+.segmentpie text {
+    font-family: "gesta";
+    fill: #918f90;
+}
+

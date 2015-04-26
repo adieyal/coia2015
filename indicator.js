@@ -24,7 +24,7 @@ Indicator.prototype = {
         n.append('rect')
             .attr('width', w)
             .attr('height', h)
-            .classed('block', true);
+            .classed('indicator', true);
 
         if (value === true) {
             n.append('rect')

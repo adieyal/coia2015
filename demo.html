@@ -4,52 +4,13 @@
     <script src="//use.typekit.net/sxw8drc.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
 
-    <style>
-        .noblock {
-            fill: #c81c22;
-        }
+    <link rel="stylesheet" href="progdial.css">
+    <link rel="stylesheet" href="segpie.css">
+    <link rel="stylesheet" href="indicator.css">
 
-        .yesblock {
-            fill: #80cc28;
-        }
-
-        .nodatablock {
-            fill: #918f90;
-        }
-
-        .valueblock {
-            fill: #6ba3e4;
-        }
-
-        .indicator text {
-            font-size: 10px;
-            font-family: Arial;
-        }
-
-        .block {
-            fill: #e9e9e9;
-        }
-
-        .segmentpie .segment.inactive {
-            fill: #918f90
-        }
-
-        .segmentpie .segment.active {
-            fill: #6ba3e4;
-        }
-
-        .segmentpie text {
-            font-family: "gesta";
-            fill: #918f90;
-        }
-
-        h1 {
-            font-family: "gesta";
-        }
-    </style>
 </head>
 <body>
-    <h1>3/5</h1>
+    <div id="content" style="background-color: #4F4F4F"></div>
     <svg height="500">
         <g id="yesind" transform="translate(0, 0)"></g>
         <g id="noind" transform="translate(0, 20)"></g>
@@ -58,11 +19,13 @@
         <g id="val2" transform="translate(0, 80)"></g>
 
         <g id="segpie" transform="translate(0, 120)"></g>
+        <g id="progdial" transform="translate(0, 140)"></g>
     </svg>
 
     <script type='text/javascript' src='d3.v3.js'></script>
     <script type='text/javascript' src='indicator.js'></script>
     <script type='text/javascript' src='segpie.js'></script>
+    <script type='text/javascript' src='progdial.js'></script>
 
     <script>
         iyes = new Indicator({ value : true, node : d3.select('#yesind') });  
@@ -71,6 +34,7 @@
         ival1 = new Indicator({ value : 54, node : d3.select('#val1') });  
         ival2 = new Indicator({ value : "54%", node : d3.select('#val2') });  
         seg = new Segpie({ value : 3, node : d3.select('#segpie')});
+        progdial = new ProgressDial({ node : d3.select('#progdial'), end_percent : 0.52});
         
     </script>
 </body>
