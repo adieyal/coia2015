@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="progdial.css">
     <link rel="stylesheet" href="segpie.css">
     <link rel="stylesheet" href="indicator.css">
+    <link rel="stylesheet" href="dial.css">
 
 </head>
 <body>
@@ -20,12 +21,14 @@
 
         <g id="segpie" transform="translate(0, 120)"></g>
         <g id="progdial" transform="translate(0, 140)"></g>
+        <g id="dial" transform="translate(0, 250)"></g>
     </svg>
 
     <script type='text/javascript' src='d3.v3.js'></script>
     <script type='text/javascript' src='indicator.js'></script>
     <script type='text/javascript' src='segpie.js'></script>
     <script type='text/javascript' src='progdial.js'></script>
+    <script type='text/javascript' src='dial.js'></script>
 
     <script>
         iyes = new Indicator({ value : true, node : d3.select('#yesind') });  
@@ -35,6 +38,7 @@
         ival2 = new Indicator({ value : "54%", node : d3.select('#val2') });  
         seg = new Segpie({ value : 3, node : d3.select('#segpie')});
         progdial = new ProgressDial({ node : d3.select('#progdial'), end_percent : 0.52});
+        dial = new Dial({ value : 23, node : d3.select('#dial')});
         
     </script>
 </body>
