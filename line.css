@@ -1,0 +1,44 @@
+.line-graph .line {
+    fill: none;
+    stroke: #6ba3e4;
+}
+
+.line-graph .axes line {
+    stroke: #4f4c4d;
+}
+
+.line-graph .axes text {
+    fill: #4f4c4d;
+    font-family: "gesta" !important;
+}
+
+.line-graph .yLabel {
+    text-anchor: end !important;
+    font-size: 9px;
+}
+
+.line-graph .xLabel {
+    font-size: 9px;
+    text-anchor: middle !important;
+}
+
+.line-graph .guide-line {
+    stroke: #4f4c4d;
+    stroke-width:0.25;
+    stroke-linecap:round;
+    stroke-dasharray:2;
+}
+
+.line-graph .spot, .line-graph .spot-text {
+    fill: #6ba3e4;
+}
+
+.line-graph .spot-text, .line-graph .spot-text2 {
+    fill: #6ba3e4;
+    font-family: "Arial" !important;
+    font-size: 10px;
+}
+
+.line-graph .spot-text2 {
+    font-weight: bold;
+}

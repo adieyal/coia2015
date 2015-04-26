@@ -1,4 +1,4 @@
-Dial = function(ctx){
+Dial = function(ctx) {
     this.w = ctx.width || 112;
     this.h = ctx.width || 53;
 

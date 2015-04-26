@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="segpie.css">
     <link rel="stylesheet" href="indicator.css">
     <link rel="stylesheet" href="dial.css">
+    <link rel="stylesheet" href="line.css">
 
 </head>
 <body>
     <div id="content" style="background-color: #4F4F4F"></div>
-    <svg height="500">
+    <svg height="500" width="800">
         <g id="yesind" transform="translate(0, 0)"></g>
         <g id="noind" transform="translate(0, 20)"></g>
         <g id="nullind" transform="translate(0, 40)"></g>
@@ -22,6 +23,7 @@
         <g id="segpie" transform="translate(0, 120)"></g>
         <g id="progdial" transform="translate(0, 140)"></g>
         <g id="dial" transform="translate(0, 250)"></g>
+        <g id="line1" transform="translate(0, 300)"></g>
     </svg>
 
     <script type='text/javascript' src='d3.v3.js'></script>
@@ -29,6 +31,7 @@
     <script type='text/javascript' src='segpie.js'></script>
     <script type='text/javascript' src='progdial.js'></script>
     <script type='text/javascript' src='dial.js'></script>
+    <script type='text/javascript' src='line.js'></script>
 
     <script>
         iyes = new Indicator({ value : true, node : d3.select('#yesind') });  
@@ -39,7 +42,8 @@
         seg = new Segpie({ value : 3, node : d3.select('#segpie')});
         progdial = new ProgressDial({ node : d3.select('#progdial'), end_percent : 0.52});
         dial = new Dial({ value : 23, node : d3.select('#dial')});
-        
+        line = new LineGraph({ node : d3.select('#line1'), data : [[1990, 100], [2001, 50], [2012, 20]], year_range : [1988, 2015]});
+            
     </script>
 </body>
 </html>
