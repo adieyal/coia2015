@@ -33,7 +33,6 @@ QuintileWidget.prototype = {
                 .attr('x1', me.bottom)
                 .attr('x2', me.top)
 
-            console.log(me.value);
             qwidget.select('#result-value')
                 .attr('transform', 'translate(' + xscale(me.value) + ',0)')
                 .select('text').text(me.value + '%');
