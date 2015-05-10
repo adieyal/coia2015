@@ -27,9 +27,19 @@
     <script>
         ctx = {
             node : d3.select('#content'),
-            country_name : 'China'
-            
+            country_name : 'China',
+            quintile : {
+                contraception: {bottom: 20, value: 40, top: 60},
+                antenatal: {bottom: 20, value: 40, top: 60},
+                prevention: {bottom: 20, value: 40, top: 60},
+                'birth-attendants': {bottom: 20, value: 40, top: 60},
+                'post-natal': {bottom: 20, value: 40, top: 60},
+                'breast-feeding': {bottom: 20, value: 40, top: 60},
+                dpt3: {bottom: 20, value: 40, top: 60},
+                pneumonia: {bottom: 20, value: 40, top: 60}
+            }
         }
+
         page1 = new Page1(ctx)
         /*
         iyes = new Indicator({ value : true, node : d3.select('#yesind') });  
