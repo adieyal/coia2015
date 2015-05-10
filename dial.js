@@ -1,4 +1,4 @@
-Dial = function(ctx) {
+DialWidget = function(ctx) {
     this.w = ctx.width || 112;
     this.h = ctx.width || 53;
 
@@ -13,7 +13,7 @@ Dial = function(ctx) {
     this.render(this.value);
 };
 
-Dial.prototype = {
+DialWidget.prototype = {
 
     render: function(value) {
         var n = this.node.classed('dial', true);
