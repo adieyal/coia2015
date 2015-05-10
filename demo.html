@@ -44,7 +44,7 @@
         ival2 = new Indicator({ value : "54%", node : d3.select('#val2') });  
         seg = new Segpie({ value : 3, node : d3.select('#segpie')});
         progdial = new ProgressDial({ node : d3.select('#progdial'), end_percent : 0.52});
-        dial = new Dial({ value : 23, node : d3.select('#dial')});
+        dial = new DialWidget({ value : 23, node : d3.select('#dial')});
         line = new LineGraph({ node : d3.select('#line1'), data : [[1990, 100], [2001, 50], [2012, 20]], year_range : [1988, 2015]});
         quintile = new QuintileWidget({ bottom : 23, top : 67, value : 50, node : d3.select('#quintile')});
         d3.select('#quintile svg').attr('height', '75px');
