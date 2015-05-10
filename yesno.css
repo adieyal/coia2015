@@ -1,0 +1,14 @@
+.yesno #outer-ring.no {
+    fill: #d91920;
+}
+
+.yesno #outer-ring.yes {
+    fill: #b0da19;
+}
+
+.yesno text {
+    font-family: "gesta";
+    fill: #fff;
+    text-transform: uppercase;
+}
+
