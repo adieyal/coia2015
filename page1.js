@@ -23,6 +23,13 @@ var replace_dial = function(node, dx, dy, values) {
     return node;
 }
 
+var replace_segpie = function(node, dx, dy, value) {
+    node.selectAll('*').remove();
+    var g = node.append('g').attr('transform', 'translate(' + dx + ',' + dy +') scale(1, -1)');
+    var x = new Segpie({ node : g, value : value});
+    return node;
+}
+
 Page1.prototype = {
 
     render: function(ctx) {
@@ -46,6 +53,7 @@ Page1.prototype = {
 
             replace_dial(page1.selectAll('#dial-density'), 205, -490, { value : 84 });
             //replace_progdial(page1.selectAll('#dial-density'), 205, -490, { value : 1 });
+            replace_segpie(page1.selectAll('#abortion-status'), 500, 386, ctx['abortion-status']);
         })
     }
 }

@@ -1,4 +1,4 @@
-Segpie = function(ctx){
+Segpie = function(ctx) {
     this.w = ctx.width || 42;
     this.h = ctx.width || 42;
 
@@ -22,6 +22,8 @@ Segpie.prototype = {
                 if (value >= i)
                     n.select(".segment" + i).classed("active", true);
             }
+            console.log(value);
+            n.selectAll('#label-text tspan').text(value + '/5'); 
         });
 
     }
