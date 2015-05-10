@@ -30,6 +30,13 @@ var replace_segpie = function(node, dx, dy, value) {
     return node;
 }
 
+var replace_family_planning = function(node, dx, dy, value) {
+    node.selectAll('*').remove();
+    var g = node.append('g').attr('transform', 'translate(' + dx + ',' + dy +') scale(0.73, -0.73)');
+    var x = new ProgressDial({ node : g, end_percent : value});
+    return node;
+}
+
 Page1.prototype = {
 
     render: function(ctx) {
@@ -54,6 +61,7 @@ Page1.prototype = {
             replace_dial(page1.selectAll('#dial-density'), 205, -490, { value : 84 });
             //replace_progdial(page1.selectAll('#dial-density'), 205, -490, { value : 1 });
             replace_segpie(page1.selectAll('#abortion-status'), 500, 386, ctx['abortion-status']);
+            replace_family_planning(page1.selectAll('#family-planning'), 478, 463, ctx['family-planning']);
         })
     }
 }
