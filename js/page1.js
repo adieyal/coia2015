@@ -44,6 +44,16 @@ var replace_access_contraceptives = function(node, dx, dy, value) {
     return node;
 }
 
+var replace_line = function(node, dx, dy, ctx) {
+    node.selectAll('*').remove();
+    var g = node.append('g').attr('transform', 'translate(' + dx + ',' + dy +') scale(0.55, -0.55)');
+    ctx.node = g;
+    
+    var x = new LineGraph(ctx);
+    return node;
+}
+
+
 Page1.prototype = {
 
     render: function(ctx) {
@@ -66,10 +76,18 @@ Page1.prototype = {
             replace_quintile(page1.selectAll('#quintile-pneumonia'), 1498, -580, quintile['pneumonia']);
 
             replace_dial(page1.selectAll('#dial-density'), 205, -490, { value : 84 });
-            //replace_progdial(page1.selectAll('#dial-density'), 205, -490, { value : 1 });
             replace_segpie(page1.selectAll('#abortion-status'), 500, 386, ctx['abortion-status']);
             replace_family_planning(page1.selectAll('#family-planning'), 478, 463, ctx['family-planning']);
             replace_access_contraceptives(page1.selectAll('#access-contraceptives'), 230, 380, ctx['access-contraceptives']);
+            replace_line(page1.selectAll('#under5-mortality'), 40, 673, ctx['under5-mortality']);
+            replace_line(page1.selectAll('#neonatal-mortality'), 40, 567, ctx['neonatal-mortality']);
+            replace_line(page1.selectAll('#maternal-mortality'), 310, 673, ctx['maternal-mortality']);
+            replace_line(page1.selectAll('#stunting'), 310, 567, ctx['stunting']);
+
+            d3.select('#total-population').text(ctx['total-population']);
+            d3.select('#under5-population').text(ctx['under5-population']);
+            d3.select('#births').text(ctx['births']);
+            d3.select('#adolescent-birth').text(ctx['adolescent-birth']);
         })
     }
 }

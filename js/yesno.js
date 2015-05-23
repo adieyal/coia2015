@@ -21,7 +21,6 @@ YesNoWidget.prototype = {
                 n.selectAll('#outer-ring').classed('yes', true);
             }
             else {
-                console.log(d3.selectAll(n).attr);
                 n.selectAll('text tspan').text('No'); 
                 n.selectAll('#outer-ring').classed('no', true);
             }

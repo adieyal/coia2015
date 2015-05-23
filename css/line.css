@@ -10,6 +10,7 @@
 .line-graph .axes text {
     fill: #4f4c4d;
     font-family: "gesta" !important;
+    font-size: 11.4px !important;
 }
 
 .line-graph .yLabel {
@@ -29,6 +30,25 @@
     stroke-dasharray:2;
 }
 
+.line-graph .mdg {
+    stroke: #f1511b;
+    stroke-width:2.5;
+    stroke-linecap:round;
+    stroke-dasharray:5;
+}
+
+.line-graph .mdg-text {
+    fill: #f1511b;
+    font-family: "gesta" !important;
+    font-size: 12px;
+}
+.line-graph .mdg-text-figure {
+    fill: #f1511b;
+    font-family: "gesta" !important;
+    font-size: 12px;
+    font-weight: bold;
+}
+
 .line-graph .spot, .line-graph .spot-text {
     fill: #6ba3e4;
 }
@@ -42,3 +62,4 @@
 .line-graph .spot-text2 {
     font-weight: bold;
 }
+
