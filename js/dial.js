@@ -18,7 +18,7 @@ DialWidget.prototype = {
     render: function(value) {
         var n = this.node.classed('dial', true);
         var me = this;
-        d3.xml('dial.svg', function(xml) {
+        d3.xml('/svg/dial.svg', function(xml) {
             var importedNode = document.importNode(xml.documentElement, true);
             var dial = n[0][0].appendChild(importedNode.cloneNode(true));
             var start_angle = Math.PI / 180 * 270;

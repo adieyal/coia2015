@@ -15,7 +15,7 @@ Segpie.prototype = {
 
     render: function(value) {
         var n = this.node.classed('segpie', true);
-        d3.xml('segment.svg', function(xml) {
+        d3.xml('/svg/segment.svg', function(xml) {
             var importedNode = document.importNode(xml.documentElement, true);
             var pie = n[0][0].appendChild(importedNode.cloneNode(true));
             for (i = 1; i <= 5; i++) {

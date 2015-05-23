@@ -58,7 +58,7 @@ Page1.prototype = {
 
     render: function(ctx) {
         var n = this.node.classed('page1', true);
-        d3.xml('page1.svg', function(xml) {
+        d3.xml('/svg/page1.svg', function(xml) {
             var importedNode = document.importNode(xml.documentElement, true);
             var page1 = d3.select(n[0][0].appendChild(importedNode.cloneNode(true)));
             var quintile = ctx.quintile;

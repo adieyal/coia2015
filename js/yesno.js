@@ -13,7 +13,7 @@ YesNoWidget.prototype = {
 
     render: function(value) {
         var n = this.node.classed('yesno', true);
-        d3.xml('yesno.svg', function(xml) {
+        d3.xml('/svg/yesno.svg', function(xml) {
             var importedNode = document.importNode(xml.documentElement, true);
             n[0][0].appendChild(importedNode.cloneNode(true));
             if (value === true) {

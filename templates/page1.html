@@ -1,0 +1,37 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script src="//use.typekit.net/sxw8drc.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+
+    <link rel="stylesheet" href="css/progdial.css">
+    <link rel="stylesheet" href="css/segpie.css">
+    <link rel="stylesheet" href="css/indicator.css">
+    <link rel="stylesheet" href="css/dial.css">
+    <link rel="stylesheet" href="css/line.css">
+    <link rel="stylesheet" href="css/quintile.css">
+    <link rel="stylesheet" href="css/yesno.css">
+
+</head>
+<body>
+    <div id="content" style="background-color: #4F4F4F"></div>
+
+    <script type='text/javascript' src='js/d3.v3.js'></script>
+    <script type='text/javascript' src='js/indicator.js'></script>
+    <script type='text/javascript' src='js/segpie.js'></script>
+    <script type='text/javascript' src='js/progdial.js'></script>
+    <script type='text/javascript' src='js/dial.js'></script>
+    <script type='text/javascript' src='js/line.js'></script>
+    <script type='text/javascript' src='js/quintile.js'></script>
+    <script type='text/javascript' src='js/yesno.js'></script>
+    <script type='text/javascript' src='js/page1.js'></script>
+
+    <script>
+        var ctx = {{ context }};
+        ctx['node'] = d3.select('#content');
+
+        page1 = new Page1(ctx)
+            
+    </script>
+</body>
+</html>

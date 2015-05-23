@@ -24,7 +24,7 @@ QuintileWidget.prototype = {
             .x(function(d, i) { return xscale(d[0]); })
             .y(function(d) { return d[1]; })
 
-        d3.xml('quintile.svg', function(xml) {
+        d3.xml('/svg/quintile.svg', function(xml) {
             var importedNode = document.importNode(xml.documentElement, true);
             var qwidget = d3.select(n[0][0].appendChild(importedNode.cloneNode(true)));
             qwidget.select('#red-circle').attr('transform', 'translate(' + xscale(me.bottom) + ',0)');
