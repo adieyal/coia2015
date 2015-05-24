@@ -59,8 +59,6 @@ class CountryData(object):
         tmpl = env.get_template('page1.html')
         data = parse()
         ctx = data[country]
-        print ctx['total-population']
-        print ctx
         return tmpl.render(context=json.dumps(ctx))
     
     page1.exposed = True

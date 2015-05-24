@@ -69,23 +69,29 @@ def get_demographic_data(book, data):
     return data
 
 def get_quintiles(book, data):
-    sheet_name = 'demographic data charts'
+    sheet_name = 'Coverage indicators & quintiles'
     sheet = book.sheet_by_name(sheet_name)
 
+        
     for idx in range(sheet.nrows):
         values = sheet.row_values(idx)
+
+        def extract(idx):
+            return {'bottom' : foz(values[idx + 1]), 'value' : foz(values[idx]), 'top' : foz(values[idx + 2])}
+
         country = values[0]
         datum = data.setdefault(country, {})
         datum['quintile'] = {
-            'contraception': {'bottom': 20, 'value': 40, 'top': 60},
-            'antenatal': {'bottom': 20, 'value': 40, 'top': 60},
-            'prevention': {'bottom': 20, 'value': 40, 'top': 60},
-            'birth-attendants': {'bottom': 20, 'value': 40, 'top': 60},
-            'post-natal': {'bottom': 20, 'value': 40, 'top': 60},
-            'breast-feeding': {'bottom': 20, 'value': 40, 'top': 60},
-            'dpt3': {'bottom': 20, 'value': 40, 'top': 60},
-            'pneumonia': {'bottom': 20, 'value': 40, 'top': 60}
+            'contraception': extract(1),
+            'antenatal': extract(6),
+            'prevention': extract(11),
+            'birth-attendants': extract(16),
+            'post-natal': extract(21),
+            'breast-feeding': extract(26),
+            'dpt3': extract(31),
+            'pneumonia': extract(36)
         }
+
     return data
 
 def parse():

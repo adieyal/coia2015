@@ -31,7 +31,12 @@
             return Math.round(x * 100) / 100;
         }
 
+        var round1 = function(x) {
+            return Math.round(x * 10) / 10;
+        }
+
         var ctx = {{ context }};
+        console.log(ctx);
         ctx['node'] = d3.select('#content');
         ctx['maternal-mortality']['w'] = 500;
         ctx['maternal-mortality']['h'] = 180;
@@ -44,6 +49,23 @@
         ctx['doctors'] = round2(ctx['doctors'])
         ctx['total-population'] = ctx['total-population'].toLocaleString()
         ctx['under5-population'] = ctx['under5-population'].toLocaleString()
+
+        var q = ctx['quintile']
+        var roundq = function(v) {
+            return {
+                bottom : round1(v['bottom']),
+                value : round1(v['value']),
+                top : round1(v['top'])
+            }
+        }
+        q['contraception'] = roundq(q['contraception'])
+        q['antenatal'] = roundq(q['antenatal']);
+        q['prevention'] = roundq(q['prevention']);
+        q['birth-attendants'] = roundq(q['birth-attendants']);
+        q['post-natal'] = roundq(q['post-natal']);
+        q['breast-feeding'] = roundq(q['breast-feeding']);
+        q['dpt3'] = roundq(q['dpt3']);
+        q['pneumonia'] = roundq(q['pneumonia']);
 
         page1 = new Page1(ctx)
             
