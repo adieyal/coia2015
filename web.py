@@ -60,7 +60,14 @@ class CountryData(object):
         data = parse()
         ctx = data[country]
         return tmpl.render(context=json.dumps(ctx))
+
+    def page2(self, country):
+        tmpl = env.get_template('page2.html')
+        data = parse()
+        ctx = data[country]
+        return tmpl.render(context=json.dumps(ctx))
     
     page1.exposed = True
+    page2.exposed = True
 
 cherrypy.quickstart(CountryData(), '/', 'web.config')
