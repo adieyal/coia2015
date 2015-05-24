@@ -75,7 +75,7 @@ Page1.prototype = {
             replace_quintile(page1.selectAll('#quintile-dpt3'), 1035, -580, quintile['dpt3']);
             replace_quintile(page1.selectAll('#quintile-pneumonia'), 1498, -580, quintile['pneumonia']);
 
-            replace_dial(page1.selectAll('#dial-density'), 205, -490, { value : 84 });
+            replace_dial(page1.selectAll('#dial-density'), 205, -490, { value : ctx['doctors'] });
             replace_segpie(page1.selectAll('#abortion-status'), 500, 386, ctx['abortion-status']);
             replace_family_planning(page1.selectAll('#family-planning'), 478, 463, ctx['family-planning']);
             replace_access_contraceptives(page1.selectAll('#access-contraceptives'), 230, 380, ctx['access-contraceptives']);

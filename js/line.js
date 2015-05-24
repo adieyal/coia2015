@@ -97,6 +97,8 @@ LineGraph.prototype = {
             .attr("y", 0)
             .attr("text-anchor", "middle")
 
+        console.log(y(0))
+        console.log(y(-5.5))
         axes.selectAll(".xTicks")
             .data(x.ticks(5))
             .enter().append("line")
@@ -104,7 +106,7 @@ LineGraph.prototype = {
             .attr("x1", function(d) { return x(d); })
             .attr("y1", -1 * y(0))
             .attr("x2", function(d) { return x(d); })
-            .attr("y2", -1 * y(-5.5))
+            .attr("y2", -1 * y(0) + 8)
     },
     add_yaxis: function(axes, x, y) {
         axes.append("line")

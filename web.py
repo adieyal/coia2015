@@ -1,6 +1,7 @@
 import cherrypy
 from jinja2 import Environment, FileSystemLoader
 import json
+from parse import parse
 env = Environment(loader=FileSystemLoader('templates'))
 
 ctx = {
@@ -56,7 +57,10 @@ ctx = {
 class CountryData(object):
     def page1(self, country):
         tmpl = env.get_template('page1.html')
-        ctx['country_name'] = country;
+        data = parse()
+        ctx = data[country]
+        print ctx['total-population']
+        print ctx
         return tmpl.render(context=json.dumps(ctx))
     
     page1.exposed = True

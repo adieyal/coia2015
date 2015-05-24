@@ -27,8 +27,23 @@
     <script type='text/javascript' src='js/page1.js'></script>
 
     <script>
+        var round2 = function(x) {
+            return Math.round(x * 100) / 100;
+        }
+
         var ctx = {{ context }};
         ctx['node'] = d3.select('#content');
+        ctx['maternal-mortality']['w'] = 500;
+        ctx['maternal-mortality']['h'] = 180;
+        ctx['under5-mortality']['w'] = 500;
+        ctx['under5-mortality']['h'] = 180;
+        ctx['neonatal-mortality']['w'] = 500;
+        ctx['neonatal-mortality']['h'] = 180;
+        ctx['stunting']['w'] = 500;
+        ctx['stunting']['h'] = 180;
+        ctx['doctors'] = round2(ctx['doctors'])
+        ctx['total-population'] = ctx['total-population'].toLocaleString()
+        ctx['under5-population'] = ctx['under5-population'].toLocaleString()
 
         page1 = new Page1(ctx)
             
