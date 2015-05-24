@@ -64,7 +64,8 @@ Page1.prototype = {
             var quintile = ctx.quintile;
             page1.selectAll('.country-name tspan').text(ctx.country_name);
 
-            // TODO Add flag
+            console.log(ctx)
+            page1.select('#flag').attr('xlink:href', 'data:image/png;base64,' + ctx.flag);
 
             replace_quintile(page1.selectAll('#quintile-contraception'), 116, -820, quintile['contraception']);
             replace_quintile(page1.selectAll('#quintile-antenatal'), 575, -820, quintile['antenatal']);

@@ -1,6 +1,9 @@
 import xlrd
+import os
+import base64
 
 FILENAME = "data.xlsx"
+book = xlrd.open_workbook(FILENAME)
 
 def ioz(val):
     try:
@@ -20,7 +23,7 @@ def fon(val):
     except ValueError:
         return None
 
-def get_demographic_population(book, data):
+def get_demographic_population(data):
     sheet_name = 'demographic RH & HS data'
     sheet = book.sheet_by_name(sheet_name)
     for idx in range(sheet.nrows):
@@ -37,7 +40,7 @@ def get_demographic_population(book, data):
         datum['family-planning'] = foz(values[13])
         datum['doctors'] = foz(values[9])
     
-def get_demographic_data(book, data):
+def get_demographic_data(data):
     sheet_name = 'demographic data charts'
     sheet = book.sheet_by_name(sheet_name)
     no_nones = lambda x : x[1] is not None
@@ -68,7 +71,7 @@ def get_demographic_data(book, data):
         
     return data
 
-def get_quintiles(book, data):
+def get_quintiles(data):
     sheet_name = 'Coverage indicators & quintiles'
     sheet = book.sheet_by_name(sheet_name)
 
@@ -94,13 +97,30 @@ def get_quintiles(book, data):
 
     return data
 
+def clean_filename(x):
+    return x.replace(' ', '_')
+
+def get_flag(data):
+    clean_country = clean_filename
+    for country, values in data.items():
+        try:
+            fname = 'flags/%s.png' % clean_country(country)
+            fp = open(fname, "rb")
+            binary = fp.read()
+            encoded = base64.encodestring(binary)
+            values['flag'] = encoded
+        except IOError:
+            print clean_country(country)
+            pass
+    return data
+
 def parse():
-    book = xlrd.open_workbook(FILENAME)
     data = {}
 
-    get_demographic_population(book, data) 
-    get_demographic_data(book, data)
-    get_quintiles(book, data)
+    get_demographic_population(data) 
+    get_demographic_data(data)
+    get_quintiles(data)
+    get_flag(data)
     return data
     
 parse()
