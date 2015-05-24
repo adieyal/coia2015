@@ -97,8 +97,6 @@ LineGraph.prototype = {
             .attr("y", 0)
             .attr("text-anchor", "middle")
 
-        console.log(y(0))
-        console.log(y(-5.5))
         axes.selectAll(".xTicks")
             .data(x.ticks(5))
             .enter().append("line")
