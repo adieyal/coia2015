@@ -5,6 +5,9 @@ import base64
 FILENAME = "data.xlsx"
 book = xlrd.open_workbook(FILENAME)
 
+def clean_filename(x):
+    return x.replace(' ', '_')
+
 def ioz(val):
     try:
         return int(val)
@@ -97,8 +100,6 @@ def get_quintiles(data):
 
     return data
 
-def clean_filename(x):
-    return x.replace(' ', '_')
 
 def get_flag(data):
     clean_country = clean_filename
@@ -110,10 +111,88 @@ def get_flag(data):
             encoded = base64.encodestring(binary)
             values['flag'] = encoded
         except IOError:
-            print clean_country(country)
             pass
     return data
 
+def blank_is_none(x):
+    return None if x.strip() == '' else x
+
+def str_to_bool(x):
+    x = str(x)
+    if x.lower() == 'yes':
+        return True
+    elif x.lower() == 'no':
+        return False
+    return None
+
+def visit_rows(sheet_name, func, data):
+    sheet = book.sheet_by_name(sheet_name)
+
+    for idx in range(sheet.nrows):
+        row_values = sheet.row_values(idx)
+        country = row_values[0]
+        datum = data.setdefault(country, {})
+        func(datum, row_values)
+
+
+def get_vital_events(datum, row_values):
+
+    indicators = datum.setdefault('indicators', {})
+
+    indicators['births-registered'] = blank_is_none(row_values[1])
+    indicators['deaths-registered'] = blank_is_none(row_values[4])    
+    indicators['mdsr'] = str_to_bool(row_values[7])
+    indicators['crvs'] = str_to_bool(row_values[19])
+
+def get_health_indicators(datum, row_values):
+
+    indicators = datum.setdefault('indicators', {})
+    indicators['stats-available'] = str_to_bool(row_values[1])
+
+def get_health_indicators_impact(datum, row_values):
+
+    indicators = datum.setdefault('indicators', {})
+    indicators['impact-indicators'] = str_to_bool(row_values[1])
+
+def get_ehealth(datum, row_values):
+
+    indicators = datum.setdefault('indicators', {})
+    indicators['ehealth-strategy'] = str_to_bool(row_values[1])
+
+def get_compacts(datum, row_values):
+
+    indicators = datum.setdefault('indicators', {})
+    indicators['country-compact'] = str_to_bool(row_values[1])
+
+def get_resource_tracking(datum, row_values):
+
+    indicators = datum.setdefault('indicators', {})
+    indicators['health-expenditure'] = str_to_bool(row_values[1])
+    indicators['health-per-capita'] = None # TODO find this
+    indicators['rmnch'] = str_to_bool(row_values[5])
+    indicators['annual-rmnch'] = blank_is_none(row_values[6])
+
+def get_rwc(datum, row_values):
+
+    indicators = datum.setdefault('indicators', {})
+    indicators['rmnch-expenditure'] = str_to_bool(row_values[1])
+
+def get_rwc(datum, row_values):
+
+    indicators = datum.setdefault('indicators', {})
+    indicators['rmnch-expenditure'] = str_to_bool(row_values[1])
+        
+def get_national_oversight(datum, row_values):
+
+    indicators = datum.setdefault('indicators', {})
+    indicators['annual-review'] = str_to_bool(row_values[1])
+    indicators['progress-assessment'] = str_to_bool(row_values[4])
+
+def get_transparency(datum, row_values):
+
+    indicators = datum.setdefault('indicators', {})
+    indicators['sector-performance'] = str_to_bool(row_values[1])
+        
 def parse():
     data = {}
 
@@ -121,6 +200,16 @@ def parse():
     get_demographic_data(data)
     get_quintiles(data)
     get_flag(data)
+
+    visit_rows('Vital events', get_vital_events, data)
+    visit_rows('Health indicators (coverage)', get_health_indicators, data)
+    visit_rows('Health indicators (impact)', get_health_indicators_impact, data)
+    visit_rows('Innovation & eHealth', get_ehealth, data)
+    visit_rows('Country Compacts', get_compacts, data)
+    visit_rows('Resource tracking', get_resource_tracking, data)
+    visit_rows('Reaching Women & children', get_rwc, data)
+    visit_rows('National oversight', get_national_oversight, data)
+    visit_rows('Transparency', get_transparency, data)
     return data
     
 parse()

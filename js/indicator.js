@@ -1,6 +1,6 @@
 Indicator = function(ctx){
-    this.w = ctx.width || 58;
-    this.h = ctx.width || 16;
+    this.w = ctx.width || 67;
+    this.h = ctx.width || 12;
 
     if (ctx.node === undefined) { throw Error('No Node given'); }
     this.node = ctx.node;
