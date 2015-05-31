@@ -9,14 +9,14 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="436.23117"
-   height="73.981865"
+   width="435.60019"
+   height="86.68187"
    id="svg6197"
    version="1.1"
    preserveAspectRatio="xMinYMin"
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="quintile.svg"
-   viewBox="0 0 92.238645 81.173395">
+   viewBox="0 0 92.105227 95.107924">
   <metadata
      id="metadata8290">
     <rdf:RDF>
@@ -30,6 +30,10 @@
   </metadata>
   <defs
      id="defs6199">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect4246"
+       is_visible="true" />
     <clipPath
        clipPathUnits="userSpaceOnUse"
        id="clipPath5111">
@@ -86,13 +90,13 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="210.29151"
-     inkscape:cy="34.03829"
+     inkscape:zoom="1.4"
+     inkscape:cx="411.15372"
+     inkscape:cy="-82.124425"
      inkscape:document-units="px"
      inkscape:current-layer="svg6197"
      showgrid="false"
-     fit-margin-top="0.3"
+     fit-margin-top="5"
      fit-margin-left="0.3"
      fit-margin-right="0.3"
      fit-margin-bottom="0.3"
@@ -104,7 +108,7 @@
   <g
      id="g7653"
      class="quintile-widget"
-     transform="matrix(3.8860697,0,0,3.8860697,237.97773,32.685615)">
+     transform="matrix(3.8860697,0,0,3.8860697,237.97773,46.62014)">
     <g
        id="background"
        transform="translate(61.812429,-1.5209855)">
@@ -112,14 +116,14 @@
          id="g5085">
         <path
            id="path5093"
-           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.14117177000000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:7;stroke-opacity:1;stroke-dasharray:none"
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.14117177;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:7;stroke-opacity:1;stroke-dasharray:none"
            d="m -0.21749069,0.02517704 c 0,-0.76749084 -0.63325336,-1.39070914 -1.41310251,-1.39070914 l -118.3216568,0 c -0.78085,0 -1.4131,0.6232183 -1.4131,1.39070914 l 0,5.65411096 c 0,0.7674908 0.63225,1.390709 1.4131,1.390709 l 118.3216568,0 c 0.77984915,0 1.41310251,-0.6232182 1.41310251,-1.390709 l 0,-5.65411096 z"
            inkscape:connector-curvature="0" />
         <g
            id="g5095">
           <path
              id="path5097"
-             style="fill:#e9e9e9;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.81879628000000004;stroke-miterlimit:7;stroke-opacity:1;stroke-dasharray:none"
+             style="fill:#e9e9e9;fill-opacity:1;fill-rule:nonzero;stroke:none"
              d="m -0.992,1.045 c 0,-0.782 -0.635,-1.417 -1.417,-1.417 l -116.664,0 c -0.782,0 -1.417,0.635 -1.417,1.417 l 0,3.671 c 0,0.782 0.635,1.417 1.417,1.417 l 116.664,0 c 0.782,0 1.417,-0.635 1.417,-1.417 l 0,-3.671 z"
              inkscape:connector-curvature="0" />
         </g>
@@ -127,7 +131,7 @@
     </g>
     <g
        id="ticks"
-       transform="translate(61.812429,-1.5209855)">
+       transform="translate(61.812429,-3.7797339)">
       <g
          id="g7436">
         <text

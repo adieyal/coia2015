@@ -2,7 +2,7 @@ import xlrd
 import os
 import base64
 
-FILENAME = "data.xlsx"
+FILENAME = "data/data2.xlsx"
 book = xlrd.open_workbook(FILENAME)
 
 def clean_filename(x):
@@ -13,6 +13,12 @@ def ioz(val):
         return int(val)
     except ValueError:
         return 0
+
+def ion(val):
+    try:
+        return int(val)
+    except ValueError:
+        return None
 
 def foz(val):
     try:
@@ -48,6 +54,12 @@ def get_demographic_data(data):
     sheet = book.sheet_by_name(sheet_name)
     no_nones = lambda x : x[1] is not None
 
+    def get_year_range(values):
+        years = filter(lambda x: x != None, [ion(values[1]), ion(values[3]), ion(values[5])])
+        if len(years) > 0:
+            return (years[0] - 2, years[-1] + 2)
+        return (None, None)
+
     for idx in range(sheet.nrows):
         values = sheet.row_values(idx)
         country = values[0]
@@ -62,13 +74,14 @@ def get_demographic_data(data):
             'year_range': [1988, 2015],
         }
 
+        ymin = [values[12], values[14], values[16]]
         datum['stunting'] = {
-            'data': filter(no_nones, [[1990, fon(values[11])], [2000, fon(values[12])], [2012, fon(values[13])]]),
-            'year_range': [1988, 2015],
+            'data': filter(no_nones, [[ion(values[12]), fon(values[11])], [ion(values[14]), fon(values[13])], [ion(values[16]), fon(values[15])]]),
+            'year_range': get_year_range(values[11:17]),
         }
 
         datum['neonatal-mortality'] = {
-            'data': filter(no_nones, [[1990, fon(values[15])], [2000, fon(values[16])], [2013, fon(values[17])]]),
+            'data': filter(no_nones, [[1990, fon(values[18])], [2000, fon(values[19])], [2013, fon(values[20])]]),
             'year_range': [1988, 2015],
         }
         
@@ -118,10 +131,10 @@ def blank_is_none(x):
     return None if x.strip() == '' else x
 
 def str_to_bool(x):
-    x = str(x)
-    if x.lower() == 'yes':
+    x = str(x).strip().lower()
+    if x == 'yes':
         return True
-    elif x.lower() == 'no':
+    elif x == 'no':
         return False
     return None
 
@@ -168,7 +181,7 @@ def get_resource_tracking(datum, row_values):
 
     indicators = datum.setdefault('indicators', {})
     indicators['health-expenditure'] = str_to_bool(row_values[1])
-    indicators['health-per-capita'] = None # TODO find this
+    indicators['health-per-capita'] = fon(row_values[2]) # TODO find this
     indicators['rmnch'] = str_to_bool(row_values[5])
     indicators['annual-rmnch'] = blank_is_none(row_values[6])
 
