@@ -33,7 +33,7 @@ var replace_segpie = function(node, dx, dy, value) {
 var replace_family_planning = function(node, dx, dy, value) {
     node.selectAll('*').remove();
     var g = node.append('g').attr('transform', 'translate(' + dx + ',' + dy +') scale(0.73, -0.73)');
-    var x = new ProgressDial({ node : g, end_percent : value});
+    var x = new ProgressDial({ node : g, end_percent : value / 100});
     return node;
 }
 
@@ -64,7 +64,6 @@ Page1.prototype = {
             var quintile = ctx.quintile;
             page1.selectAll('.country-name tspan').text(ctx.country_name);
 
-            console.log(ctx)
             page1.select('#flag').attr('xlink:href', 'data:image/png;base64,' + ctx.flag);
 
             replace_quintile(page1.selectAll('#quintile-contraception'), 116, -820, quintile['contraception']);
