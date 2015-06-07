@@ -10,6 +10,7 @@ Indicator = function(ctx){
 
     this.yestext = ctx.yestext || 'YES';
     this.notext = ctx.notext || 'NO';
+    this.partialtext = ctx.partialtext || 'PARTIAL';
     this.nodatatext = ctx.nodatatext || 'NO DATA';
 
     this.render(this.value);
@@ -26,13 +27,13 @@ Indicator.prototype = {
             .attr('height', h)
             .classed('indicator', true);
 
-        if (value === true) {
+        if (value === 'Y') {
             n.append('rect')
                 .attr('width', w / 2)
                 .attr('height', h)
                 .attr('x', w / 2)
                 .classed('yesblock', true);
-        } else if (value === false) {
+        } else if (value === 'N') {
             n.append('rect')
                 .attr('width', w / 2)
                 .attr('height', h)
@@ -57,10 +58,18 @@ Indicator.prototype = {
             .attr('text-anchor', 'middle')
             .text(this.nodatatext);
 
-        if (value === true)
+        if (value === 'Y') {
             n.select('text').attr('x', w / 4 * 3).text(this.yestext);
-        else if (value === false)
+            console.log('YES');
+        }
+        else if (value === 'N') {
+            console.log('NO');
             n.select('text').attr('x', w / 4).text(this.notext);
+        }
+        else if (value === 'Partial') {
+            console.log('PARTIAL')
+            n.select('text').text(this.partialtext);
+        }
         else if (value === null) {
         }
         else {

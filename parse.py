@@ -2,7 +2,7 @@ import xlrd
 import os
 import base64
 
-FILENAME = "data/data4.xlsx"
+FILENAME = "data/data5.xlsx"
 book = xlrd.open_workbook(FILENAME)
 
 def clean_filename(x):
@@ -67,11 +67,13 @@ def get_demographic_data(data):
         datum['maternal-mortality'] = {
             'data': filter(no_nones, [[1990, fon(values[1])], [2000, fon(values[2])], [2013, fon(values[3])]]),
             'year_range': [1988, 2015],
+            'mdg': fon(values[4])
         }
 
         datum['under5-mortality'] = {
             'data': filter(no_nones, [[1990, fon(values[6])], [2000, fon(values[7])], [2013, fon(values[8])]]),
             'year_range': [1988, 2015],
+            'mdg': fon(values[9])
         }
 
         ymin = [values[12], values[14], values[16]]
@@ -128,14 +130,20 @@ def get_flag(data):
     return data
 
 def blank_is_none(x):
-    return None if str(x).strip() == '' else x
+    if str(x).strip() == '' or str(x).lower() == 'no data':
+        return None
+    else:
+        return x
 
-def str_to_bool(x):
+
+def str_to_ivalue(x):
     x = str(x).strip().lower()
     if x == 'yes':
-        return True
+        return 'Y'
     elif x == 'no':
-        return False
+        return 'N'
+    elif x == 'partial':
+        return 'Partial'
     return None
 
 def visit_rows(sheet_name, func, data):
@@ -154,57 +162,57 @@ def get_vital_events(datum, row_values):
 
     indicators['births-registered'] = blank_is_none(row_values[1])
     indicators['deaths-registered'] = blank_is_none(row_values[4])    
-    indicators['mdsr'] = str_to_bool(row_values[7])
-    indicators['crvs'] = str_to_bool(row_values[19])
+    indicators['mdsr'] = str_to_ivalue(row_values[7])
+    indicators['crvs'] = str_to_ivalue(row_values[19])
 
 def get_health_indicators(datum, row_values):
 
     indicators = datum.setdefault('indicators', {})
-    indicators['stats-available'] = str_to_bool(row_values[1])
+    indicators['stats-available'] = str_to_ivalue(row_values[1])
 
 def get_health_indicators_impact(datum, row_values):
 
     indicators = datum.setdefault('indicators', {})
-    indicators['impact-indicators'] = str_to_bool(row_values[1])
+    indicators['impact-indicators'] = str_to_ivalue(row_values[1])
 
 def get_ehealth(datum, row_values):
 
     indicators = datum.setdefault('indicators', {})
-    indicators['ehealth-strategy'] = str_to_bool(row_values[1])
+    indicators['ehealth-strategy'] = str_to_ivalue(row_values[1])
 
 def get_compacts(datum, row_values):
 
     indicators = datum.setdefault('indicators', {})
-    indicators['country-compact'] = str_to_bool(row_values[1])
+    indicators['country-compact'] = str_to_ivalue(row_values[1])
 
 def get_resource_tracking(datum, row_values):
 
     indicators = datum.setdefault('indicators', {})
-    indicators['health-expenditure'] = str_to_bool(row_values[1])
+    indicators['health-expenditure'] = str_to_ivalue(row_values[1])
     indicators['health-per-capita'] = fon(row_values[2]) # TODO find this
-    indicators['rmnch'] = str_to_bool(row_values[5])
+    indicators['rmnch'] = str_to_ivalue(row_values[5])
     indicators['annual-rmnch'] = blank_is_none(row_values[6])
 
 def get_rwc(datum, row_values):
 
     indicators = datum.setdefault('indicators', {})
-    indicators['rmnch-expenditure'] = str_to_bool(row_values[1])
+    indicators['rmnch-expenditure'] = str_to_ivalue(row_values[1])
 
 def get_rwc(datum, row_values):
 
     indicators = datum.setdefault('indicators', {})
-    indicators['rmnch-expenditure'] = str_to_bool(row_values[1])
+    indicators['rmnch-expenditure'] = str_to_ivalue(row_values[1])
         
 def get_national_oversight(datum, row_values):
 
     indicators = datum.setdefault('indicators', {})
-    indicators['annual-review'] = str_to_bool(row_values[1])
-    indicators['progress-assessment'] = str_to_bool(row_values[4])
+    indicators['annual-review'] = str_to_ivalue(row_values[1])
+    indicators['progress-assessment'] = str_to_ivalue(row_values[4])
 
 def get_transparency(datum, row_values):
 
     indicators = datum.setdefault('indicators', {})
-    indicators['sector-performance'] = str_to_bool(row_values[1])
+    indicators['sector-performance'] = str_to_ivalue(row_values[1])
         
 def parse():
     data = {}
