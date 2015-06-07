@@ -13,59 +13,54 @@
     .c3-bar {
         fill: #6BA4E4 !important;
     }
+
+    .c3-axis text {
+        font-size: 6px;
+    }
+
+    .c3-texts text {
+        font-size: 6px;
+    }
+
+    .c3-axis-x .tick line {
+       display: none;
+    }
     </style>
 
 </head>
 <body>
-    <div id="chart"></div>
+    <div id="chart2"></div>
+    <div id="content"></div>
 
     <script type='text/javascript' src='js/d3.js'></script>
     <script type='text/javascript' src='js/c3.js'></script>
+    <script type='text/javascript' src='js/donor.js'></script>
 
     <script>
-        var chart = c3.generate({
-            data: {
-                columns: [
-                    ['data1', 4104.71, 4198.03, 5486.15, 7253.09, 8472.56, 10026.22, 10600.59, 9883.59, 10907.55, 12601.55, 12915.1, 12997.24, 12028.27, 11341.94, 300.0, 300.0]
-                ],
-                type: 'bar',
-                labels: true
-            },
-            bar: {
-                width: {
-                    ratio: 0.5 // this makes bar width 50% of length between ticks
-                }
-                // or
-                //width: 100 // this makes bar width 100px
-            },
-            axis: {
-                x: {
-                    type: 'category',
-                    categories: ['2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015']
-                }
-            },
-            grid: {
-                x: {
-                    lines: [
-                        {value: 0.50},
-                        {value: 1.51},
-                        {value: 2.51},
-                        {value: 3.51},
-                        {value: 4.51},
-                        {value: 5.51},
-                        {value: 6.51},
-                        {value: 7.51},
-                        {value: 8.51},
-                        {value: 9.51},
-                        {value: 10.51},
-                        {value: 11.51},
-                        {value: 12.51},
-                        {value: 13.50},
-                        {value: 14.50},
-                    ]
-                }
-            }
-        });
+        var ctx = {
+        }
+        ctx['node'] = d3.select('#content');
+        ctx['donor_name'] = 'UKAID';
+        ctx['commitments'] = [
+            [2000, 4104.71], 
+            [2001, 4198.03], 
+            [2002, 5486.15], 
+            [2003, 7253.09], 
+            [2004, 8472.56], 
+            [2005, 10026.22], 
+            [2006, 10600.59], 
+            [2007, 9883.59], 
+            [2008, 10907.55], 
+            [2009, 12601.55], 
+            [2010, 12915.1], 
+            [2011, 12997.24], 
+            [2012, 12028.27], 
+            [2013, 11341.94], 
+            [2014, 300], 
+            [2015, 300]
+        ]
+
+        donor = new Donor(ctx)
 
     </script>
 </body>
