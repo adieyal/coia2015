@@ -2,7 +2,7 @@ import xlrd
 import os
 import base64
 
-FILENAME = "data/data2.xlsx"
+FILENAME = "data/data4.xlsx"
 book = xlrd.open_workbook(FILENAME)
 
 def clean_filename(x):
@@ -128,7 +128,7 @@ def get_flag(data):
     return data
 
 def blank_is_none(x):
-    return None if x.strip() == '' else x
+    return None if str(x).strip() == '' else x
 
 def str_to_bool(x):
     x = str(x).strip().lower()
