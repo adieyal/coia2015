@@ -5,6 +5,10 @@
     text-anchor: middle;
 }
 
+.dial .value-text.no-data {
+    font-size:16px;
+}
+
 .dial .standard-text {
     font-family: "gesta" !important;
     font-weight: bold !important;

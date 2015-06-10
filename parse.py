@@ -2,7 +2,7 @@ import xlrd
 import os
 import base64
 
-FILENAME = "data/data5.xlsx"
+FILENAME = "data/data6.xlsx"
 book = xlrd.open_workbook(FILENAME)
 
 def clean_filename(x):
@@ -43,7 +43,7 @@ def get_demographic_population(data):
         datum['total-population'] = ioz(values[1])
         datum['under5-population'] = ioz(values[3])
         datum['births'] = foz(values[5])
-        datum['adolescent-birth'] = foz(values[7])
+        datum['adolescent-birth'] = round(foz(values[7]))
         datum['abortion-status'] = ioz(values[15])
         datum['access-contraceptives'] = False # Need data to figure out how this is calculated
         datum['family-planning'] = foz(values[13])

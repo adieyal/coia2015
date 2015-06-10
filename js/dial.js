@@ -29,7 +29,12 @@ DialWidget.prototype = {
             var front = d3.select(dial).select('.progress-strip')
                 .attr('d', arc.endAngle(start_angle - Math.PI / 100 * me.value))
                 .attr('transform', 'translate(' + me.radius + ',0)')
-            d3.select(dial).select('.value-text').text(me.value);
+            if (me.value === 0)
+                d3.select(dial).select('.value-text')
+                    .text('No Data')
+                    .classed('no-data', true);
+            else
+                d3.select(dial).select('.value-text').text(me.value);
         });
 
     }

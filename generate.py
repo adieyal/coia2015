@@ -7,6 +7,9 @@ URL1 = 'http://localhost:8080/page1?country=%s'
 URL2 = 'http://localhost:8080/page2?country=%s'
 
 data = parse.get_quintiles({})
+for d in ['output', 'output/final', 'output/page1', 'output/page2']:
+    if not os.path.exists(d):
+        os.mkdir(d)
 for country in data.keys():
     cleaned = parse.clean_filename(country)
     if os.path.exists('flags/%s.png' % cleaned):

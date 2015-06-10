@@ -10,7 +10,6 @@ QuintileWidget = function(ctx){
 
     if (ctx.value === undefined) { throw Error('No value given'); }
     this.value = ctx.value;
-
     this.render(this.value);
 };
 
@@ -27,8 +26,16 @@ QuintileWidget.prototype = {
         d3.xml('/svg/quintile.svg', function(xml) {
             var importedNode = document.importNode(xml.documentElement, true);
             var qwidget = d3.select(n[0][0].appendChild(importedNode.cloneNode(true)));
-            qwidget.select('#red-circle').attr('transform', 'translate(' + xscale(me.bottom) + ',0)');
-            qwidget.select('#yellow-circle').attr('transform', 'translate(' + xscale(me.top) + ',0)');
+            if (me.bottom > 0)
+                qwidget.select('#red-circle').attr('transform', 'translate(' + xscale(me.bottom) + ',0)');
+            else
+                qwidget.select('#red-circle').remove()
+
+            if (me.top > 0)
+                qwidget.select('#yellow-circle').attr('transform', 'translate(' + xscale(me.top) + ',0)');
+            else
+                qwidget.select('#yellow-circle').remove()
+            
             qwidget.select('#indicator #line line')
                 .attr('x1', me.bottom)
                 .attr('x2', me.top)
