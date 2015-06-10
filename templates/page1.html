@@ -46,8 +46,8 @@
         ctx['stunting']['w'] = 500;
         ctx['stunting']['h'] = 180;
         ctx['doctors'] = round2(ctx['doctors'])
-        ctx['total-population'] = ctx['total-population'].toLocaleString().replace(',', ' '); // TODO - not sure which locale to use for spaces as thousands separators
-        ctx['under5-population'] = ctx['under5-population'].toLocaleString().replace(',', ' ');
+        ctx['total-population'] = ctx['total-population'].toLocaleString().replace(/,/g, ' '); // TODO - not sure which locale to use for spaces as thousands separators
+        ctx['under5-population'] = ctx['under5-population'].toLocaleString().replace(/,/g, ' ');
 
         var q = ctx['quintile']
         var roundq = function(v) {

@@ -12,3 +12,10 @@
     text-transform: uppercase;
 }
 
+.yesno .nodata {
+    font-size: 6px;
+}
+
+.yesno .partial {
+    font-size: 7px;
+}

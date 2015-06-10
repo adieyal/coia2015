@@ -45,7 +45,7 @@ def get_demographic_population(data):
         datum['births'] = foz(values[5])
         datum['adolescent-birth'] = round(foz(values[7]))
         datum['abortion-status'] = ioz(values[15])
-        datum['access-contraceptives'] = False # Need data to figure out how this is calculated
+        datum['access-contraceptives'] = values[11].upper()
         datum['family-planning'] = foz(values[13])
         datum['doctors'] = foz(values[9])
     

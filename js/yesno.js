@@ -16,16 +16,23 @@ YesNoWidget.prototype = {
         d3.xml('/svg/yesno.svg', function(xml) {
             var importedNode = document.importNode(xml.documentElement, true);
             n[0][0].appendChild(importedNode.cloneNode(true));
-            if (value === true) {
+            if (value === 'YES') {
                 n.selectAll('text tspan').text('Yes'); 
                 n.selectAll('#outer-ring').classed('yes', true);
             }
-            else {
+            else if (value === 'NO') {
                 n.selectAll('text tspan').text('No'); 
                 n.selectAll('#outer-ring').classed('no', true);
             }
+            else if (value === 'PARTIAL') {
+                n.selectAll('text tspan').text('Partial').classed('partial', true); 
+                n.selectAll('#outer-ring').classed('partial', true);
+            }
+            else {
+                n.selectAll('text tspan').text('No Data').classed('nodata', true); 
+                n.selectAll('#outer-ring').classed('nodata', true);
+            }
         });
-
     }
 }
 
