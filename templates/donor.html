@@ -5,27 +5,7 @@
     <script>try{Typekit.load();}catch(e){}</script>
 
     <link rel="stylesheet" href="css/c3.min.css">
-    <style>
-    .c3-grid line {
-        stroke-dasharray: 2;
-    }
-
-    .c3-bar {
-        fill: #6BA4E4 !important;
-    }
-
-    .c3-axis text {
-        font-size: 6px;
-    }
-
-    .c3-texts text {
-        font-size: 6px;
-    }
-
-    .c3-axis-x .tick line {
-       display: none;
-    }
-    </style>
+    <link rel="stylesheet" href="css/donor.css">
 
 </head>
 <body>
@@ -33,35 +13,15 @@
     <div id="content"></div>
 
     <script type='text/javascript' src='js/d3.js'></script>
+    <script type='text/javascript' src='js/d3textwrap.v0.js'></script>
     <script type='text/javascript' src='js/c3.js'></script>
+    <script type='text/javascript' src='js/progdial.js'></script>
     <script type='text/javascript' src='js/donor.js'></script>
 
     <script>
-        var ctx = {
-        }
+        var ctx = {{ context }};
         ctx['node'] = d3.select('#content');
-        ctx['donor_name'] = 'UKAID';
-        ctx['commitments'] = [
-            [2000, 4104.71], 
-            [2001, 4198.03], 
-            [2002, 5486.15], 
-            [2003, 7253.09], 
-            [2004, 8472.56], 
-            [2005, 10026.22], 
-            [2006, 10600.59], 
-            [2007, 9883.59], 
-            [2008, 10907.55], 
-            [2009, 12601.55], 
-            [2010, 12915.1], 
-            [2011, 12997.24], 
-            [2012, 12028.27], 
-            [2013, 11341.94], 
-            [2014, 300], 
-            [2015, 300]
-        ]
-
         donor = new Donor(ctx)
-
     </script>
 </body>
 </html>

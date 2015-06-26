@@ -36,25 +36,20 @@ QuintileWidget.prototype = {
             else
                 qwidget.select('#yellow-circle').remove()
             
-            qwidget.select('#indicator #line line')
+            var widget = qwidget.select('#indicator #line line')
                 .attr('x1', me.bottom)
                 .attr('x2', me.top)
-
-            qwidget.select('#result-value')
-                .attr('transform', 'translate(' + xscale(me.value) + ',0)')
-                .select('text').text(me.value + '%');
-            qwidget.select('#result-indicator')
-                .attr('transform', 'translate(' + xscale(me.value) + ',0)')
+            if (me.value == 0) {
+                qwidget.select('#result-indicator').remove(); 
+                qwidget.select('#result-value').attr('transform', 'translate(' + 5 + ',0)').select('text').text('No data');
+            } else {
+                qwidget.select('#result-value')
+                    .attr('transform', 'translate(' + xscale(me.value) + ',0)')
+                    .select('text').text(me.value + '%');
+                qwidget.select('#result-indicator')
+                    .attr('transform', 'translate(' + xscale(me.value) + ',0)')
+            }
             
-                
-            /*
-            qwidget.select('#indicator').append('line')
-                .attr('x1', xscale(me.bottom))
-                .attr('x2', xscale(me.top))
-                .attr('y1', 10)
-                .attr('y2', 10)
-                .style('stroke', 'black')
-            */
         });
 
     }

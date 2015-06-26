@@ -1,0 +1,77 @@
+.c3-grid line {
+    stroke-dasharray: 2;
+}
+
+.c3-axis text {
+    font-size: 6px;
+}
+
+.c3-texts text {
+    font-size: 6px;
+}
+
+.c3-axis-x .tick line {
+   display: none;
+}
+
+.c3-line {
+    stroke: #D81920 !important;
+}
+
+.c3-circle {
+    fill: #D81920 !important;
+}
+
+.c3-texts-data2 text {
+    fill: #D81920 !important;
+}
+
+
+#total-commitments .c3-target-data1 path,
+#total-commitments .c3-texts-data1 text,
+#rmnch .c3-target-data1 path,
+#rmnch .c3-texts-data1 text,
+#bimulti .c3-target-data1 path
+{
+    fill: #6ba3e4 !important;
+}
+
+#health-total .c3-target-data1 path,
+#health-total .c3-texts-data1 text,
+#bimulti .c3-target-data2 path
+{
+    fill: #24478e !important;
+}
+
+.progdial circle {
+    fill: #24478e;
+}
+
+.progdial .background {
+    fill: #d3d2d2;
+}
+
+.progdial .foreground {
+    fill: #6ba3e4;
+}
+
+.progress-meter text {
+    font-family: Arial;
+    font-size: 14px;
+}
+
+.perc_year {
+    font-size:9px; 
+    fill: white; 
+}
+
+.pledge .wrapped {
+    font-size:6.5px;
+    font-family: arial;
+    color: #4f4c4d;
+    text-align: justify;
+}
+
+.pledge rect {
+    display: none;
+}

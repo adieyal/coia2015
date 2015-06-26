@@ -16,10 +16,9 @@ var replace_quintile = function(node, dx, dy, values) {
 
 var replace_dial = function(node, dx, dy, values) {
     node.selectAll('*').remove();
-    var g = node.append('g').attr('transform', 'scale(0.9, -0.9) translate(' + dx + ',' + dy +')');
+    var g = node.append('g').attr('transform', 'scale(0.85, -0.85) translate(' + dx + ',' + dy +')');
     values.node = g;
     q1 = new DialWidget(values);
-    //node.attr('height', '75px');
     return node;
 }
 
@@ -32,14 +31,14 @@ var replace_segpie = function(node, dx, dy, value) {
 
 var replace_family_planning = function(node, dx, dy, value) {
     node.selectAll('*').remove();
-    var g = node.append('g').attr('transform', 'translate(' + dx + ',' + dy +') scale(0.73, -0.73)');
+    var g = node.append('g').attr('transform', 'translate(' + dx + ',' + dy +') scale(0.70, -0.70)');
     var x = new ProgressDial({ node : g, end_percent : value / 100});
     return node;
 }
 
 var replace_access_contraceptives = function(node, dx, dy, value) {
     node.selectAll('*').remove();
-    var g = node.append('g').attr('transform', 'translate(' + dx + ',' + dy +') scale(0.73, -0.73)');
+    var g = node.append('g').attr('transform', 'translate(' + dx + ',' + dy +') scale(0.9, -0.9)');
     var x = new YesNoWidget({ node : g, value : value});
     return node;
 }
@@ -66,6 +65,11 @@ Page1.prototype = {
 
             page1.select('#flag').attr('xlink:href', 'data:image/png;base64,' + ctx.flag);
 
+            d3.select('#total-population').text(ctx['total-population']);
+            d3.select('#under5-population').text(ctx['under5-population']);
+            d3.select('#births').text(ctx['births']);
+            d3.select('#adolescent-birth').text(ctx['adolescent-birth']);
+
             replace_quintile(page1.selectAll('#quintile-contraception'), 116, -820, quintile['contraception']);
             replace_quintile(page1.selectAll('#quintile-antenatal'), 575, -820, quintile['antenatal']);
             replace_quintile(page1.selectAll('#quintile-prevention'), 1035, -820, quintile['prevention']);
@@ -75,19 +79,15 @@ Page1.prototype = {
             replace_quintile(page1.selectAll('#quintile-dpt3'), 1035, -580, quintile['dpt3']);
             replace_quintile(page1.selectAll('#quintile-pneumonia'), 1498, -580, quintile['pneumonia']);
 
-            replace_dial(page1.selectAll('#dial-density'), 205, -490, { value : ctx['doctors'] });
-            replace_segpie(page1.selectAll('#abortion-status'), 500, 386, ctx['abortion-status']);
+            replace_dial(page1.selectAll('#dial-density'), 210, -520, { value : ctx['doctors'] });
+            replace_segpie(page1.selectAll('#abortion-status'), 499, 386, ctx['abortion-status']);
             replace_family_planning(page1.selectAll('#family-planning'), 478, 463, ctx['family-planning']);
-            replace_access_contraceptives(page1.selectAll('#access-contraceptives'), 230, 380, ctx['access-contraceptives']);
+            replace_access_contraceptives(page1.selectAll('#access-contraceptives'), 230, 387, ctx['access-contraceptives']);
             replace_line(page1.selectAll('#under5-mortality'), 40, 673, ctx['under5-mortality']);
             replace_line(page1.selectAll('#neonatal-mortality'), 40, 567, ctx['neonatal-mortality']);
             replace_line(page1.selectAll('#maternal-mortality'), 310, 673, ctx['maternal-mortality']);
             replace_line(page1.selectAll('#stunting'), 310, 567, ctx['stunting']);
 
-            d3.select('#total-population').text(ctx['total-population']);
-            d3.select('#under5-population').text(ctx['under5-population']);
-            d3.select('#births').text(ctx['births']);
-            d3.select('#adolescent-birth').text(ctx['adolescent-birth']);
         })
     }
 }

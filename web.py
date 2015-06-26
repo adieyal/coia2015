@@ -2,6 +2,8 @@ import cherrypy
 from jinja2 import Environment, FileSystemLoader
 import json
 from parse import parse
+import parse_dp
+
 env = Environment(loader=FileSystemLoader('templates'))
 
 class CountryData(object):
@@ -19,7 +21,10 @@ class CountryData(object):
 
     def donor(self, donor):
         tmpl = env.get_template('donor.html')
-        return tmpl.render()
+        data = parse_dp.parse()
+        ctx = data[donor]
+        ctx['donor'] = {'name': donor}
+        return tmpl.render(context=json.dumps(ctx, indent=4))
     
     page1.exposed = True
     page2.exposed = True

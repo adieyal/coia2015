@@ -1,36 +1,10 @@
 import xlrd
 import os
 import base64
+from misc import fon, foz, ion, ioz, clean_filename
 
-FILENAME = "data/data6.xlsx"
+FILENAME = "data.xlsx"
 book = xlrd.open_workbook(FILENAME)
-
-def clean_filename(x):
-    return x.replace(' ', '_')
-
-def ioz(val):
-    try:
-        return int(val)
-    except ValueError:
-        return 0
-
-def ion(val):
-    try:
-        return int(val)
-    except ValueError:
-        return None
-
-def foz(val):
-    try:
-        return float(val)
-    except ValueError:
-        return 0
-
-def fon(val):
-    try:
-        return float(val)
-    except ValueError:
-        return None
 
 def get_demographic_population(data):
     sheet_name = 'demographic RH & HS data'
@@ -40,8 +14,8 @@ def get_demographic_population(data):
         country = values[0]
         datum = data.setdefault(country, {})
         datum['country_name'] = values[0]
-        datum['total-population'] = ioz(values[1])
-        datum['under5-population'] = ioz(values[3])
+        datum['total-population'] = '{:,}'.format(ioz(values[1]))
+        datum['under5-population'] = '{:,}'.format(ioz(values[3]))
         datum['births'] = foz(values[5])
         datum['adolescent-birth'] = round(foz(values[7]))
         datum['abortion-status'] = ioz(values[15])
@@ -231,6 +205,18 @@ def parse():
     visit_rows('Reaching Women & children', get_rwc, data)
     visit_rows('National oversight', get_national_oversight, data)
     visit_rows('Transparency', get_transparency, data)
+
+    data['Congo, DRC'] = data['Democratic Republic of the Congo']
+    data['Korea, DPR'] = data["Democratic People's Republic of Korea"]
+    data['Lao, PDR'] = data["Lao People's Democratic Republic"]
+    data['Congo, DRC']['country_name'] = 'Congo, DRC'
+    data['Korea, DPR']['country_name'] = 'Korea, DPR'
+    data['Lao, PDR']['country_name'] = 'Lao, PDR'
+
+    del data['Democratic Republic of the Congo']
+    del data["Democratic People's Republic of Korea"]
+    del data["Lao People's Democratic Republic"]
+
     return data
     
 parse()

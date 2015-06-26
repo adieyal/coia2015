@@ -19,14 +19,14 @@ LineGraph.prototype = {
             .data([[this.year_range[0], this.year_range[1], this.mdg]])
             .enter()
             .append('line')
-                .attr('x1', function(d) { return x(d[0]) }) 
+                .attr('x1', function(d) { return x(d[0]) + 5 }) 
                 .attr('x2', function(d) { return x(d[1]) }) 
                 .attr('y1', function(d) { return -y(d[2]) }) 
                 .attr('y2', function(d) { return -y(d[2]) }) 
                 .classed('mdg', true)
 
         var mdg_text = g.append('text')
-            .attr('transform', 'translate(35, ' + -y(this.mdg + 3) + ')')
+            .attr('transform', 'translate(35, ' + (-y(this.mdg) - 7) + ')')
 
         mdg_text.append('tspan')
             .text('MDG Target: ')
@@ -108,9 +108,9 @@ LineGraph.prototype = {
     },
     add_yaxis: function(axes, x, y) {
         axes.append("line")
-            .attr("x1", x(this.year_range[0]))
+            .attr("x1", x(this.year_range[0]) + 5)
             .attr("y1", -1 * y(0))
-            .attr("x2", x(this.year_range[0]))
+            .attr("x2", x(this.year_range[0]) + 5)
             .attr("y2", -1 * y(max_y))
 
         axes.selectAll(".yLabel")
@@ -118,7 +118,7 @@ LineGraph.prototype = {
             .enter().append("text")
             .attr("class", "yLabel")
             .text(String)
-            .attr("x", -5)
+            .attr("x", -2)
             .attr("y", function(d) { return -1 * y(d) })
             .attr("dy", 3)
             .attr('dx', '1.5em')
@@ -128,9 +128,9 @@ LineGraph.prototype = {
             .enter().append("line")
             .attr("class", "yTicks")
             .attr("y1", function(d) { return -1 * y(d); })
-            .attr("x1", x(this.year_range[0]) - 5)
+            .attr("x1", x(this.year_range[0]) - 1)
             .attr("y2", function(d) { return -1 * y(d); })
-            .attr("x2", x(this.year_range[0] + 0.05))
+            .attr("x2", x(this.year_range[0]) + 6.05)
     },
     render : function() {
         var values = [];
