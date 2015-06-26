@@ -160,12 +160,12 @@
      id="namedview4"
      showgrid="false"
      inkscape:zoom="1.6583064"
-     inkscape:cx="579.30602"
-     inkscape:cy="745.98729"
+     inkscape:cx="627.54801"
+     inkscape:cy="987.19724"
      inkscape:window-x="65"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg2" /><g
+     inkscape:current-layer="g10" /><g
      id="g10"
      inkscape:groupmode="layer"
      inkscape:label="COIA Scorecards_2015_DonorProfile v4"
@@ -847,19 +847,21 @@
                style="font-size:14px;font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;letter-spacing:0.5px;word-spacing:-0.43989143px;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Gesta;-inkscape-font-specification:Gesta"
                y="-191.52744"
                x="-135.53798">Donor Profile</tspan></text>
-</g><text
-           style="font-size:12px"
-           id="text3057"
-           class="donor-name"
-           x="158.73189"
-           y="-191.68053"
-           transform="scale(1,-1)"><tspan
-             style="font-size:14px;font-variant:normal;font-weight:500;font-stretch:normal;text-align:end;letter-spacing:0.40000001px;writing-mode:lr-tb;text-anchor:end;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:gesta"
-             sodipodi:role="line"
-             id="tspan3059"
-             x="159.13188"
-             y="-191.68053">World Bank</tspan></text>
-</g><image
+</g><g
+           id="g8707"
+           transform="scale(1,-1)"><text
+             y="-191.68053"
+             x="158.73189"
+             class="donor-name"
+             id="text3057"
+             style="font-size:12px"
+             text-anchor="right"><tspan
+               y="-191.68053"
+               x="159.13188"
+               id="tspan3059"
+               sodipodi:role="line"
+               style="font-size:14px;font-variant:normal;font-weight:500;font-stretch:normal;text-align:right;letter-spacing:0.40000001px;writing-mode:lr-tb;text-anchor:end;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:gesta">World Bank</tspan></text>
+</g></g><image
          transform="scale(1,-1)"
          y="-810.29468"
          x="543.8847"

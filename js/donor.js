@@ -62,17 +62,25 @@ Donor.prototype = {
 
     },
 
-    add_flag : function(node, flag) {
+    add_title : function(node, ctx) {
+        var flag_node = node.select('#flag');
+        var flag = ctx.flag;
         var page_width = 566.28436;
         var image_padding = 4;
         var image_height = 17;
         var image_width = image_height * ctx.flag.width / ctx.flag.height;
         var image_x = page_width - image_width - image_padding;
-        node
+        flag_node
             .attr('xlink:href', 'data:image/png;base64,' + ctx.flag.data)
             .attr('width', image_width)
             .attr('height', image_height)
             .attr('x', page_width - image_width - image_padding)
+
+        d3.selectAll('.donor-name tspan').text(ctx.donor.name);
+        var text_width = node.select('.donor-name')[0][0].getBBox().width; 
+        node.selectAll('.donor-name')
+            .attr('transform', 'translate(' + (page_width - image_width - image_padding * 2) + ', 0)')
+            .attr('transform', 'translate(' + -(text_width + image_padding * 2) + ',0)')
     },
 
     render: function(ctx) {
@@ -81,7 +89,6 @@ Donor.prototype = {
         d3.xml('/svg/donor.svg', function(xml) {
             var importedNode = document.importNode(xml.documentElement, true);
             var donor = d3.select(n[0][0].appendChild(importedNode.cloneNode(true)));
-            donor.selectAll('.donor-name tspan').text(ctx.donor.name);
             donor.selectAll('.address tspan').text(ctx.contact.address);
             donor.selectAll('.url tspan').text(ctx.contact.website);
             me.render_bars(ctx);
@@ -95,7 +102,7 @@ Donor.prototype = {
             add_dial(d3.select('#perc_gdp'), ctx.commitments.figure, {x: 397, y: 744});
             add_dial(d3.select('#perc_health'), ctx['health-total'].figure, {x: 397, y: 744});
             add_dial(d3.select('#perc_rmnch'), ctx.rmnch.figure, {x: 397, y: 744});
-            me.add_flag(donor.select('#flag'), ctx.flag);
+            me.add_title(donor.select('#title'), ctx);
             d3.select('#transparency .numerator').text(ctx.transparency.numerator);
             d3.select('#transparency .denominator').text('/' + ctx.transparency.denominator);
 
