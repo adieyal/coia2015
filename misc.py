@@ -1,5 +1,7 @@
+import re
 def clean_filename(x):
-    return x.replace(',', '_').replace(' ', '_').replace('__', '_')
+    x = re.sub('[, &]', '_', x)
+    return re.sub('_+', '_', x)
 
 def ioz(val):
     try:

@@ -14,7 +14,14 @@
         this.center_radius = ctx.center_radius || this.radius - 12;
         this.center_color = ctx.center_color || '#918f90';
         this.start_percent = 0;
-        this.format = ctx.format || d3.format('.0%');
+        var threshold_format = 0.05;
+        if (ctx.format) {
+            this.format = ctx.format
+        } else if (this.end_percent > threshold_format ) {
+            this.format = d3.format('.0%');
+        } else {
+            this.format = d3.format('.2%');
+        }
 
         this.render(this.end_percent);
     }
@@ -55,7 +62,8 @@
             var numberText = meter.append('text')
                 .attr('fill', '#fff')
                 .attr('text-anchor', 'middle')
-                .attr('dy', '.35em');
+                .attr('dy', '.35em')
+                .classed('meter-value', true);
 
 
             var progress = percent;

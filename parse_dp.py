@@ -17,14 +17,14 @@ def get_oda_total(data):
         datum = data.setdefault(donor, {})
         commitments = datum.setdefault('commitments', {})
         commitments['data'] = [
-            ('2000-2002' , foz(values[1]), foz(values[2])),
-            ('2003-2005' , foz(values[3]), foz(values[4])),
-            ('2006-2008' , foz(values[5]), foz(values[6])),
-            ('2009-2011' , foz(values[7]), foz(values[8])),
-            ('2012-2014' , foz(values[9]), foz(values[10]))
+            ('2000-2002' , foz(values[1]), foz(values[2]) / 100),
+            ('2003-2005' , foz(values[3]), foz(values[4]) / 100),
+            ('2006-2008' , foz(values[5]), foz(values[6]) / 100),
+            ('2009-2011' , foz(values[7]), foz(values[8]) / 100),
+            ('2012-2014' , foz(values[9]), foz(values[10]) / 100)
         ]
 
-        commitments['figure'] = { 'value' : foz(values[11]), 'year' : 2014 }
+        commitments['figure'] = { 'value' : foz(values[11]) / 100, 'year' : 2014 }
         commitments['text'] = values[12]
 
 def get_health_total(data):
@@ -94,10 +94,17 @@ def get_transparency(data):
         num = ioz(values[1])
         den = ioz(values[2])
         
+        print donor, num, den, 'up' if num < den else 'down'
+        if num < den:
+            vector = 'up'
+        elif num > den:
+            vector = 'down'
+        else:
+            vector = 'no change'
         datum['transparency'] = {
             'numerator' : num,
             'denominator' : den,
-            'vector' : 'down' if den < num else 'up'
+            'vector' : vector
         }
 
 def get_pledges(data):
@@ -147,6 +154,7 @@ def get_flag(data):
     for donor, values in data.items():
         try:
             fname = 'donor_logos/%s.png' % clean_donor(donor)
+            print fname
             im=Image.open(fname)
             width, height = im.size
             fp = open(fname, "rb")

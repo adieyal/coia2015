@@ -60,6 +60,10 @@
     font-size: 14px;
 }
 
+#perc_gdp .progdial text {
+    font-size: 12px !important;
+}
+
 .perc_year {
     font-size:9px; 
     fill: white; 

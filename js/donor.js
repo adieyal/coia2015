@@ -2,7 +2,7 @@ var fmt_thousands = function(x) {
     return d3.format(',.0f')(x).replace(',', ' ')
 }
 
-var fmt_percentage = d3.format('.0%');
+var fmt_percentage = d3.format('.2%');
 
 Donor = function(ctx) {
     if (ctx.node === undefined) { throw Error('No Node given'); }
@@ -80,7 +80,7 @@ Donor.prototype = {
         var text_width = node.select('.donor-name')[0][0].getBBox().width; 
         node.selectAll('.donor-name')
             .attr('transform', 'translate(' + (page_width - image_width - image_padding * 2) + ', 0)')
-            .attr('transform', 'translate(' + -(text_width + image_padding * 2) + ',0)')
+            .attr('transform', 'translate(' + -(image_padding * 2) + ',0)')
     },
 
     render: function(ctx) {
@@ -106,8 +106,12 @@ Donor.prototype = {
             d3.select('#transparency .numerator').text(ctx.transparency.numerator);
             d3.select('#transparency .denominator').text('/' + ctx.transparency.denominator);
 
-            if (ctx.transparency.vector === 'down') {
-                d3.select('#vector').attr('transform', 'matrix(1,0,0,-1,409.1018,279.2432)');
+            if (ctx.transparency.vector === 'up') {
+                d3.select('#transparency-vector').attr('xlink:href', '#vector-up');
+            } else if (ctx.transparency.vector == 'down') {
+                d3.select('#transparency-vector').attr('xlink:href', '#vector-down');
+            } else {
+                d3.select('#transparency-vector').attr('xlink:href', '#vector-no-change');
             }
 
             me.add_pledges(ctx)
@@ -298,7 +302,7 @@ var generate_bar = function(node, data, w, h) {
                 show: true,
                 tick: {
                     count: 5,
-                    format: d3.format('.0%')
+                    format: fmt_percentage
                 },
                 padding : {
                     top: 15,
