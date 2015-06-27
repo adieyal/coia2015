@@ -94,7 +94,6 @@ def get_transparency(data):
         num = ioz(values[1])
         den = ioz(values[2])
         
-        print donor, num, den, 'up' if num < den else 'down'
         if num < den:
             vector = 'up'
         elif num > den:
@@ -154,8 +153,7 @@ def get_flag(data):
     for donor, values in data.items():
         try:
             fname = 'donor_logos/%s.png' % clean_donor(donor)
-            print fname
-            im=Image.open(fname)
+            im = Image.open(fname)
             width, height = im.size
             fp = open(fname, "rb")
             binary = fp.read()
