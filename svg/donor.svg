@@ -12,7 +12,7 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.91 r"
    width="744.1"
    height="1052.3625"
    xml:space="preserve"
@@ -192,9 +192,9 @@
      inkscape:window-height="744"
      id="namedview4"
      showgrid="false"
-     inkscape:zoom="5.12"
-     inkscape:cx="524.03681"
-     inkscape:cy="327.80444"
+     inkscape:zoom="2.56"
+     inkscape:cx="264.62487"
+     inkscape:cy="828.65705"
      inkscape:window-x="65"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
@@ -419,11 +419,11 @@
        id="text644"
        x="220.19679"
        y="-628.11462"><tspan
-         style="font-size:5px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#4f4c4d;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Arial;-inkscape-font-specification:ArialMT"
+         style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5px;font-family:Arial;-inkscape-font-specification:ArialMT;writing-mode:lr-tb;fill:#4f4c4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
          y="-628.11462"
          sodipodi:role="line"
          id="tspan646"
-         x="220.19679">Aggregate % GDP on ODA</tspan></text>
+         x="220.19679">Average % GDP on ODA</tspan></text>
 <text
        id="text8725"
        transform="scale(1,-1)"
@@ -2265,7 +2265,7 @@
            x="271.21194"
            style="font-size:6px;fill:#4f4c4d;fill-opacity:1"><tspan
              style="font-size:6.96000004px"
-             id="tspan8294-1"></tspan></text>
+             id="tspan8294-1" /></text>
 <text
            id="text8357"
            x="271.09769"
@@ -2507,7 +2507,7 @@
            height="132.66547"
            x="442.62027"
            y="98.377197" /></flowRegion><flowPara
-         id="flowPara7476"></flowPara></flowRoot><text
+         id="flowPara7476" /></flowRoot><text
        xml:space="preserve"
        style="font-size:31px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;opacity:0.87999998;color:#000000;fill:#4f4c4d;fill-opacity:1;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:arial;-inkscape-font-specification:arial"
        x="462.34317"
@@ -2647,7 +2647,7 @@
        sodipodi:linespacing="125%"
        transform="matrix(0.8,0,0,-0.8,0,841.89)"><tspan
          sodipodi:role="line"
-         id="tspan8733"></tspan></text>
+         id="tspan8733" /></text>
 <text
        xml:space="preserve"
        style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;opacity:0.87999998;color:#000000;fill:#4f4c4d;fill-opacity:1;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:arial;-inkscape-font-specification:arial"
@@ -2676,7 +2676,7 @@
            x="278.87366"
            y="-113.2119"
            style="marker:none"
-           id="tspan8853"> </tspan><tspan
+           id="tspan8853" /><tspan
            dx="0"
            x="280.53772"
            y="-113.2119"

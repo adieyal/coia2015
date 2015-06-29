@@ -4,7 +4,7 @@ import base64
 from misc import fon, foz, ion, ioz, clean_filename
 from PIL import Image
 
-FILENAME = "data/dp.xls"
+FILENAME = "data/dp.xlsx"
 book = xlrd.open_workbook(FILENAME)
 
 def get_oda_total(data):
@@ -13,7 +13,7 @@ def get_oda_total(data):
 
     for idx in range(sheet.nrows):
         values = sheet.row_values(idx)
-        donor = values[0]
+        donor = values[0].strip()
         datum = data.setdefault(donor, {})
         commitments = datum.setdefault('commitments', {})
         commitments['data'] = [
@@ -33,7 +33,7 @@ def get_health_total(data):
 
     for idx in range(sheet.nrows):
         values = sheet.row_values(idx)
-        donor = values[0]
+        donor = values[0].strip()
         datum = data.setdefault(donor, {})
         commitments = datum.setdefault('health-total', {})
         commitments['data'] = [
@@ -53,7 +53,7 @@ def get_rmnch(data):
 
     for idx in range(sheet.nrows):
         values = sheet.row_values(idx)
-        donor = values[0]
+        donor = values[0].strip()
         datum = data.setdefault(donor, {})
         rmnch = datum.setdefault('rmnch', {})
         rmnch['data'] = [
@@ -73,7 +73,7 @@ def get_intermediaries(data):
     
     for idx in range(sheet.nrows):
         values = sheet.row_values(idx)
-        donor = values[0]
+        donor = values[0].strip()
         datum = data.setdefault(donor, {})
         datum['bimulti'] = [
             ('2010', foz(values[1]), foz(values[2]), 0, 0),
@@ -89,7 +89,7 @@ def get_transparency(data):
     
     for idx in range(sheet.nrows):
         values = sheet.row_values(idx)
-        donor = values[0]
+        donor = values[0].strip()
         datum = data.setdefault(donor, {})
         num = ioz(values[1])
         den = ioz(values[2])
@@ -102,7 +102,7 @@ def get_transparency(data):
             vector = 'no change'
         datum['transparency'] = {
             'numerator' : num,
-            'denominator' : den,
+            'denominator' : 68,
             'vector' : vector
         }
 
@@ -112,20 +112,22 @@ def get_pledges(data):
     
     for idx in range(sheet.nrows):
         values = sheet.row_values(idx)
-        donor = values[0]
+        donor = values[0].strip()
         datum = data.setdefault(donor, {})
         
         datum['pledges'] = [
             values[1], values[2], values[3],
             values[4], values[5]
         ]
+        print donor, datum['pledges'][0]
+        print ""
 
 def get_contact(data):
     sheet_name = 'Contact+'
     sheet = book.sheet_by_name(sheet_name)
     for idx in range(sheet.nrows):
         values = sheet.row_values(idx)
-        donor = values[0]
+        donor = values[0].strip()
         datum = data.setdefault(donor, {})
         
         datum['contact'] = {
@@ -138,7 +140,7 @@ def get_funder_type(data):
     sheet = book.sheet_by_name(sheet_name)
     for idx in range(sheet.nrows):
         values = sheet.row_values(idx)
-        donor = values[0]
+        donor = values[0].strip()
         datum = data.setdefault(donor, {})
         
         datum['donor_type'] = {

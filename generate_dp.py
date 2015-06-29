@@ -11,6 +11,7 @@ for d in ['output', 'output/donor']:
     if not os.path.exists(d):
         os.mkdir(d)
 
+print data.keys()
 for donor in data.keys():
     cleaned = clean_filename(donor)
     if os.path.exists('donor_logos/%s.png' % cleaned):
