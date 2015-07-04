@@ -25,11 +25,17 @@ YesNoWidget.prototype = {
                 n.selectAll('#outer-ring').classed('no', true);
             }
             else if (value === 'PARTIAL') {
-                n.selectAll('text tspan').text('Partial').classed('partial', true); 
+                n.selectAll('text tspan')
+                    .text('Partial')
+                    .classed('partial', true)
+                    .attr('dy', -1.5)
                 n.selectAll('#outer-ring').classed('partial', true);
             }
             else {
-                n.selectAll('text tspan').text('No Data').classed('nodata', true); 
+                n.selectAll('text tspan')
+                    .text('No Data')
+                    .classed('nodata', true)
+                    .attr('dy', -1.5);
                 n.selectAll('#outer-ring').classed('nodata', true);
             }
         });

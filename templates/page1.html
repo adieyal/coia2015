@@ -50,6 +50,8 @@
         // TODO - not sure which locale to use for spaces as thousands separators
         ctx['total-population'] = ctx['total-population'].toLocaleString().replace(/,/g, ' ');
         ctx['under5-population'] = ctx['under5-population'].toLocaleString().replace(/,/g, ' ');
+        ctx['births'] = ctx['births'].toLocaleString().replace(/,/g, ' ');
+        ctx['adolescent-birth'] = ctx['adolescent-birth'].toLocaleString().replace(/,/g, ' ');
     
         var q = ctx['quintile']
         var roundq = function(v) {
