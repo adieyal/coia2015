@@ -43,6 +43,12 @@
     fill: #24478e !important;
 }
 
+/* no longer need the line graph but it's easier to remove it in CSS */
+#rmnch .c3-chart-lines,
+#rmnch .c3-texts-data2 text {
+    display: none;
+}
+
 .progdial circle {
     fill: #24478e;
 }

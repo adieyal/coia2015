@@ -101,7 +101,6 @@ Donor.prototype = {
 
             add_dial(d3.select('#perc_gdp'), ctx.commitments.figure, {x: 397, y: 744});
             add_dial(d3.select('#perc_health'), ctx['health-total'].figure, {x: 397, y: 744});
-            add_dial(d3.select('#perc_rmnch'), ctx.rmnch.figure, {x: 397, y: 744});
             me.add_title(donor.select('#title'), ctx);
             d3.select('#transparency .numerator').text(ctx.transparency.numerator);
             d3.select('#transparency .denominator').text('/' + ctx.transparency.denominator);
@@ -131,7 +130,7 @@ var add_dial = function(node, data, geom) {
     var x = new ProgressDial(ctx);
 
     g.append('text')
-        .text('(' + data.year + ')')
+        .text('' + data.year + '')
         .classed('perc_year', true)
         .attr('transform', 'translate(' + 48 + ', ' + 71 + ')')
 

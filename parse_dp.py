@@ -17,14 +17,14 @@ def get_oda_total(data):
         datum = data.setdefault(donor, {})
         commitments = datum.setdefault('commitments', {})
         commitments['data'] = [
-            ('2000-2002' , foz(values[1]), foz(values[2]) / 100),
-            ('2003-2005' , foz(values[3]), foz(values[4]) / 100),
-            ('2006-2008' , foz(values[5]), foz(values[6]) / 100),
-            ('2009-2011' , foz(values[7]), foz(values[8]) / 100),
-            ('2012-2014' , foz(values[9]), foz(values[10]) / 100)
+            ('2000-2001' , foz(values[1]), foz(values[2]) / 100),
+            ('2002-2004' , foz(values[3]), foz(values[4]) / 100),
+            ('2005-2007' , foz(values[5]), foz(values[6]) / 100),
+            ('2008-2010' , foz(values[7]), foz(values[8]) / 100),
+            ('2011-2013' , foz(values[9]), foz(values[10]) / 100)
         ]
 
-        commitments['figure'] = { 'value' : foz(values[11]) / 100, 'year' : 2014 }
+        commitments['figure'] = { 'value' : foz(values[11]) / 100, 'year' : '2011-13' }
         commitments['text'] = values[12]
 
 def get_health_total(data):
@@ -37,14 +37,14 @@ def get_health_total(data):
         datum = data.setdefault(donor, {})
         commitments = datum.setdefault('health-total', {})
         commitments['data'] = [
-            ('2000-2002' , foz(values[1]), foz(values[2])),
-            ('2003-2005' , foz(values[3]), foz(values[4])),
-            ('2006-2008' , foz(values[5]), foz(values[6])),
-            ('2009-2011' , foz(values[7]), foz(values[8])),
-            ('2012-2014' , foz(values[9]), foz(values[10]))
+            ('2000-2001' , foz(values[1]), foz(values[2])),
+            ('2002-2004' , foz(values[3]), foz(values[4])),
+            ('2005-2007' , foz(values[5]), foz(values[6])),
+            ('2008-2010' , foz(values[7]), foz(values[8])),
+            ('2011-2013' , foz(values[9]), foz(values[10]))
         ]
 
-        commitments['figure'] = { 'value' : foz(values[11]), 'year' : 2014 }
+        commitments['figure'] = { 'value' : foz(values[11]), 'year' : '2011-13' }
         commitments['text'] = values[12]
 
 def get_rmnch(data):
@@ -57,14 +57,14 @@ def get_rmnch(data):
         datum = data.setdefault(donor, {})
         rmnch = datum.setdefault('rmnch', {})
         rmnch['data'] = [
-            ('2000-2002' , foz(values[1]), foz(values[2])),
-            ('2003-2005' , foz(values[3]), foz(values[4])),
-            ('2006-2008' , foz(values[5]), foz(values[6])),
-            ('2009-2011' , foz(values[7]), foz(values[8])),
-            ('2012-2014' , foz(values[9]), foz(values[10]))
+            ('2008', foz(values[1]), foz(values[2])),
+            ('2009', foz(values[3]), foz(values[4])),
+            ('2010', foz(values[5]), foz(values[6])),
+            ('2011', foz(values[7]), foz(values[8])),
+            ('2012', foz(values[9]), foz(values[10]))
         ]
 
-        rmnch['figure'] = { 'value' : foz(values[11]), 'year' : 2014 }
+        rmnch['figure'] = { 'value' : foz(values[11]), 'year' : '2011-13' }
         rmnch['text'] = values[12]
 
 def get_intermediaries(data):
