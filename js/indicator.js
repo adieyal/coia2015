@@ -1,9 +1,10 @@
 Indicator = function(ctx){
     this.w = ctx.width || 67;
-    this.h = ctx.width || 12;
+    this.h = ctx.height || 12;
 
     if (ctx.node === undefined) { throw Error('No Node given'); }
     this.node = ctx.node;
+    this.node.selectAll('*').remove();
 
     if (ctx.value === undefined) { throw Error('No value given'); }
     this.value = ctx.value;
@@ -23,6 +24,8 @@ Indicator.prototype = {
         var n = this.node.classed('indicator', true);
 
         n.append('rect')
+            .attr('x', -w)
+            .attr('y', 0)
             .attr('width', w)
             .attr('height', h)
             .classed('indicator', true);
@@ -31,22 +34,25 @@ Indicator.prototype = {
             n.append('rect')
                 .attr('width', w / 2)
                 .attr('height', h)
-                .attr('x', w / 2)
+                .attr('x', -w + w / 2)
                 .classed('yesblock', true);
         } else if (value === 'N') {
             n.append('rect')
                 .attr('width', w / 2)
+                .attr('x', -w)
                 .attr('height', h)
                 .classed('noblock', true);
         } else if (value === null) {
             n.append('rect')
                 .attr('width', w)
                 .attr('height', h)
+                .attr('x', -w)
                 .classed('nodatablock', true);
         } else {
             n.append('rect')
                 .attr('width', w)
                 .attr('height', h)
+                .attr('x', -67)
                 .classed('valueblock', true);
         }
 
@@ -54,27 +60,21 @@ Indicator.prototype = {
             .attr('x', w / 2)
             .attr('y', h / 2)
             .attr('fill', '#fff')
-            .attr('dy', '0.3em')
+            .attr('dy', '0.4em')
             .attr('text-anchor', 'middle')
             .text(this.nodatatext);
 
         if (value === 'Y') {
-            n.select('text').attr('x', w / 4 * 3).text(this.yestext);
-            console.log('YES');
+            n.select('text').attr('x', -w + w / 4 * 3).text(this.yestext);
         }
         else if (value === 'N') {
-            console.log('NO');
-            n.select('text').attr('x', w / 4).text(this.notext);
-        }
-        else if (value === 'Partial') {
-            console.log('PARTIAL')
-            n.select('text').text(this.partialtext);
+            n.select('text').attr('x', -w + w / 4).text(this.notext);
         }
         else if (value === null) {
+            n.select('text').attr('x', -w + w / 2).text(this.nodatatext);
         }
         else {
-            n.select('text').text(value);
+            n.select('text').attr('x', -w + w / 2).text(value);
         }
     }
 }
-

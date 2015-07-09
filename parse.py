@@ -1,10 +1,11 @@
 import xlrd
 import os
 import base64
-from misc import fon, foz, ion, ioz, clean_filename
+from misc import fon, foz, ion, ioz, clean_filename, format_thousands
 
 FILENAME = "data.xlsx"
 book = xlrd.open_workbook(FILENAME)
+
 
 def get_demographic_population(data):
     sheet_name = 'demographic RH & HS data'
@@ -16,8 +17,8 @@ def get_demographic_population(data):
         datum['country_name'] = values[0]
         datum['total-population'] = '{:,}'.format(ioz(values[1]))
         datum['under5-population'] = '{:,}'.format(ioz(values[3]))
-        datum['births'] = foz(values[5])
-        datum['adolescent-birth'] = round(foz(values[7]))
+        datum['births'] = '{:,}'.format(ioz(values[5]))
+        datum['adolescent-birth'] = '{:,}'.format(int(round(ioz(values[7]))))
         datum['abortion-status'] = ioz(values[15])
         datum['access-contraceptives'] = values[11].upper()
         datum['family-planning'] = foz(values[13])
@@ -117,7 +118,7 @@ def str_to_ivalue(x):
     elif x == 'no':
         return 'N'
     elif x == 'partial':
-        return 'Partial'
+        return 'PARTIAL'
     return None
 
 def visit_rows(sheet_name, func, data):
@@ -165,7 +166,10 @@ def get_resource_tracking(datum, row_values):
     indicators['health-expenditure'] = str_to_ivalue(row_values[1])
     indicators['health-per-capita'] = fon(row_values[2]) # TODO find this
     indicators['rmnch'] = str_to_ivalue(row_values[5])
-    indicators['annual-rmnch'] = blank_is_none(row_values[6])
+    indicators['annual-rmnch'] = str(blank_is_none(row_values[6])) + "dsfsdfdsf"
+    annual_rmnch = blank_is_none(ion(row_values[6]))
+    annual_rmnch = format_thousands(annual_rmnch)
+    indicators['annual-rmnch'] = annual_rmnch
 
 def get_rwc(datum, row_values):
 

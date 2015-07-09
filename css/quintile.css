@@ -1,5 +1,9 @@
 .quintile-widget #result-value text {
-    fill: #6ba3e4 !important;
-    font-family: "gesta" !important;
-    font-size:5px !important;
+    fill: #224e61 !important;
+    font-family: "Helvetica LT Std" !important;
+    font-size:6px !important;
+}
+
+.quintile-widget #result-indicator path {
+    fill: #224e61 !important;
 }

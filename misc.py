@@ -1,4 +1,10 @@
 import re
+def format_thousands(x):
+    try:
+        return '{:,}'.format(x).replace(',', ' ')
+    except ValueError:
+        return x
+
 def clean_filename(x):
     x = re.sub('[, &]', '_', x)
     return re.sub('_+', '_', x)

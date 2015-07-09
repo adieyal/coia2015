@@ -1,7 +1,7 @@
 .dial .value-text {
-    font-family: "nimbus-sans";
+    font-family: "Helvetica LT Std";
     font-size:18.57837486px;
-    fill:#6ba3e4;
+    fill:#224e61;
     text-anchor: middle;
 }
 
@@ -10,15 +10,15 @@
 }
 
 .dial .standard-text {
-    font-family: "gesta" !important;
+    font-family: "Helvetica LT Std" !important;
     font-weight: bold !important;
 }
 
 .dial .tick-labels, .dial .standard-text {
-    font-family: "gesta" !important;
+    font-family: "Helvetica LT Std" !important;
     fill: #3c3c3c !important;
 }
 
 .dial .progress-strip {
-    fill:#6ba3e4 !important;
+    fill:#224e61 !important;
 }

@@ -1,22 +1,24 @@
 .yesno #outer-ring.no {
-    fill: #d91920;
+    fill: #224e61;
 }
 
 .yesno #outer-ring.yes {
-    fill: #b0da19;
+    fill: #224e61;
 }
 
 .yesno text {
-    font-family: "gesta";
-    fill: #fff;
+    font-family: "Helvetica LT Std";
+    fill: #224e61;
     text-transform: uppercase;
     font-weight: bold;
 }
 
 .yesno .nodata {
     font-size: 6px;
+    fill: #224e61;
 }
 
 .yesno .partial {
-    font-size: 7px;
+    font-size: 6px;
+    fill: #224e61;
 }

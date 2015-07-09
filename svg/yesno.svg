@@ -13,7 +13,7 @@
    height="48.050659"
    id="svg4360"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
+   inkscape:version="0.91 r"
    sodipodi:docname="yesno.svg">
   <defs
      id="defs4362" />
@@ -25,7 +25,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="3.959798"
-     inkscape:cx="75.539133"
+     inkscape:cx="-23.329547"
      inkscape:cy="22.351947"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -47,7 +47,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -67,11 +67,11 @@
       <path
          inkscape:connector-curvature="0"
          id="path3915"
-         style="fill:#918f90;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         style="fill:#b4d8e6;fill-opacity:1;fill-rule:nonzero;stroke:none"
          d="m 0,0 c 0.045,8.421 -6.742,15.279 -15.164,15.323 -8.422,0.042 -15.277,-6.75 -15.32,-15.169 -0.043,-8.418 6.746,-15.276 15.166,-15.32 C -6.9,-15.206 -0.039,-8.419 0,0"
          transform="translate(272.9004,365.0088)" />
       <text
-         style="font-size:12px"
+         style="font-size:12px;fill:#224e61;fill-opacity:1;"
          y="-362.28455"
          x="256.15076"
          id="text3917"
@@ -81,7 +81,7 @@
            x="256.15076"
            id="tspan3919"
            sodipodi:role="line"
-           style="text-align:center;text-anchor:middle">YES</tspan>
+           style="text-align:center;text-anchor:middle;fill:#224e61;fill-opacity:1;">YES</tspan>
       </text>
     </g>
   </g>

@@ -63,7 +63,8 @@ Page1.prototype = {
             var quintile = ctx.quintile;
             page1.selectAll('.country-name tspan').text(ctx.country_name);
 
-            page1.select('#flag').attr('xlink:href', 'data:image/png;base64,' + ctx.flag);
+            page1.select('#flag')
+                .attr('xlink:href', 'data:image/png;base64,' + ctx.flag);
 
             d3.select('#total-population').text(ctx['total-population']);
             d3.select('#under5-population').text(ctx['under5-population']);

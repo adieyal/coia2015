@@ -1,18 +1,18 @@
 .progdial text {
-    font-family: "gesta";
+    font-family: "Helvetica LT Std";
     font-size: 12px;
     font-weight: bold;
     font-color: white;
 }
 
 .progdial .center {
-    fill: #918f90;
+    fill: #224e61;
 }
 
 .progdial .background {
     fill: #f4f4f4;
 }
 .progdial .foreground {
-    fill: #6ba3e4;
+    fill: #b4d8e6;
 }
 

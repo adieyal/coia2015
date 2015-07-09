@@ -4,7 +4,7 @@ import base64
 from misc import fon, foz, ion, ioz, clean_filename
 from PIL import Image
 
-FILENAME = "data/dp.xlsx"
+FILENAME = "data/dp.xls"
 book = xlrd.open_workbook(FILENAME)
 
 def get_oda_total(data):

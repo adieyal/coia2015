@@ -11,12 +11,12 @@
 }
 
 .indicator .valueblock {
-    fill: #6ba3e4;
+    fill: #224e61;
 }
 
 .indicator text {
     font-size: 8px;
-    font-family: Arial;
+    font-family: "Helvetica LT Std";
 }
 
 .indicator {

@@ -7,11 +7,10 @@ Page2 = function(ctx){
 
 
 var replace_yesno = function(node, dx, dy, value) {
-    node.selectAll('*').remove();
     var yesno = new Indicator({node:node, value:value});
-    node.attr('transform', 'translate(' + dx + ',' + dy + ') scale(1, -1)');
     return node;
 }
+
 
 Page2.prototype = {
 
@@ -26,7 +25,7 @@ Page2.prototype = {
             page2.select('#flag').attr('xlink:href', 'data:image/png;base64,' + ctx.flag);
 
             var ind = ctx.indicators;
-            replace_yesno(page2.select('#births-registered'), 87, 88, ind['births-registered'])
+            replace_yesno(page2.select('#births-registered'), 0, 0, ind['births-registered'])
             replace_yesno(page2.select('#deaths-registered'), 87, 67, ind['deaths-registered'])
             replace_yesno(page2.select('#mdsr'), 87, 46, ind['mdsr'])
             replace_yesno(page2.select('#crvs'), 87, 24, ind['crvs'])
@@ -36,7 +35,7 @@ Page2.prototype = {
             replace_yesno(page2.select('#country-compact'), 87, -318, ind['country-compact'])
             replace_yesno(page2.select('#health-expenditure'), 87, -201, ind['health-expenditure'])
             replace_yesno(page2.select('#health-per-capita'), 87, -219, ind['health-per-capita'])
-            replace_yesno(page2.select('#rmnch'), 87, -242, ind['rmnch'])
+            replace_yesno(page2.select('#rmnch'), 0, 0, ind['rmnch'])
             replace_yesno(page2.select('#annual-rmnch'), 87, -258, ind['annual-rmnch'])
             replace_yesno(page2.select('#rmnch-expenditure'), 87, -383, ind['rmnch-expenditure'])
             replace_yesno(page2.select('#annual-review'), 87, -461, ind['annual-review'])

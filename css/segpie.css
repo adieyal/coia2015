@@ -3,11 +3,11 @@
 }
 
 .segmentpie .segment.active {
-    fill: #6ba3e4;
+    fill: #b4d8e6;
 }
 
 .segmentpie text {
-    font-family: "gesta";
-    fill: #918f90;
+    font-family: "Helvetica LT Std";
+    fill: #224e61;
 }
 
