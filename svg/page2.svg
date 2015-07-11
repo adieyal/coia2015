@@ -458,9 +458,9 @@
      inkscape:window-height="744"
      id="namedview4"
      showgrid="false"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="145.17934"
-     inkscape:cy="706.39511"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="101.932"
+     inkscape:cy="575.18897"
      inkscape:window-x="65"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
@@ -615,7 +615,6 @@
        id="text108"
        transform="scale(1,-1)"><tspan
          style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.39999962px;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std';writing-mode:lr-tb;fill:#4f4c4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="-333.45319 -325.98557 -323.65036 -318.97998 -316.64478 -314.30957 -309.63916 -307.77438 -304.97717 -302.64197 -297.97159 -293.77158 -291.43637 -288.63919 -283.96878 -279.29837 -277.43356 -273.23358 -270.89838 -266.22797 -263.43076 -258.76038"
          y="-77.117722"
          sodipodi:role="line"
          id="tspan110">% of births registered</tspan></text>
@@ -623,13 +622,13 @@
        transform="scale(1,-1)"
        id="text6621"
        x="-333.45319"
-       y="-77.586601"
+       y="-55.655251"
        style="font-size:12px"><tspan
          id="tspan6625"
          sodipodi:role="line"
-         y="-56.174965"
-         x="-333.45319 -325.98557 -323.65036 -318.97998 -316.64478 -314.30957 -309.63916 -304.96878 -300.29837 -297.96317 -293.29279 -289.09277 -286.75757 -283.96036 -279.28998 -274.61957 -272.75476 -268.55478 -266.21957 -261.54916 -258.75195 -254.08157"
-         style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.39999962px;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std';writing-mode:lr-tb;fill:#4f4c4d;fill-opacity:1;fill-rule:nonzero;stroke:none">% of deaths registered</tspan></text>
+         y="-55.655251"
+         style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.39999962px;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std';writing-mode:lr-tb;fill:#4f4c4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="-333.45319">% of deaths registered</tspan></text>
 <g
        transform="translate(-375.58408,-633.1733)"
        id="g118"><g
@@ -714,8 +713,7 @@
        x="-333.90439"
        id="text234"
        transform="scale(1,-1)"><tspan
-         style="font-size:8.39999962px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#4f4c4d;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std'"
-         x="-333.90439 -327.83957 -323.16919 -320.83398 -318.96918 -314.29877 -309.62839 -304.95798 -303.09317 -300.75797 -296.08759 -290.02277 -285.35239 -280.68198 -278.81717 -276.48196 -271.81158 -269.47638 -265.27637 -262.94116 -260.14395 -255.47357 -253.13837 -248.46796 -243.79758 -239.59756 -237.26236 -232.59195 -227.92157 -223.25117 -220.91597 -216.24557 -214.38078 -209.71037 -205.03998 -202.70477 -200.83997 -196.16957 -193.83437 -189.16397 -187.29918 -182.62877 -178.42877 -173.75838 -171.42317 -166.75278 -162.08237 -157.41197 -155.07677 -153.21198 -146.21477 -141.54437 -139.67958 -135.00917 -128.01198 -123.34158 -118.6712 -116.33599 -111.66558"
+         style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.39999962px;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std';writing-mode:lr-tb;fill:#4f4c4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
          y="132.29054"
          sodipodi:role="line"
          id="tspan236">National eHealth strategy and plan in place and implemented</tspan></text>
@@ -770,9 +768,9 @@
        style="font-size:12px"><tspan
          id="tspan7300"
          sodipodi:role="line"
-         y="41.74213"
-         x="-333.22467 -327.62189 -325.28668 -320.61627 -318.28107 -316.41629 -312.21628 -309.88107 -308.01627 -303.81628 -299.61627 -297.28107 -294.94586 -290.27548 -287.47827 -285.14307 -280.47266 -278.60788 -276.74307 -274.40787 -269.73746 -267.40225 -263.20227 -258.53186 -254.33188 -249.66147 -246.86426 -242.19388 -237.52347 -232.85309 -230.51788 -228.65306 -223.98268 -219.31227 -217.44748 -213.24747 -208.57709 -206.24188 -201.57147 -198.77429 -194.57428 -192.23907 -187.56866 -184.77148 -180.10107 -177.76587 -173.09547 -168.89548 -164.22507 -162.36029 -160.49548 -155.82507 -151.15466 -149.28987 -144.61948 -142.28427 -139.94907 -135.27869 -133.41386 -129.21387 -124.54348 -119.8731 -115.20269 -112.40549 -107.73508 -103.06467 -98.394287 -96.05909 -91.38868 -86.7183 -84.383087 -79.712677 -75.512672 -73.177467 -68.507088 -63.836678 -59.166267 -57.301491 -54.966286 -50.766273 -48.431068 -44.231087 -41.895882 -39.098671 -34.428288 -32.093082 -30.228273 -27.893068 -26.028261 -21.357882 -18.560671"
-         style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.39999962px;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std';writing-mode:lr-tb;fill:#4f4c4d;fill-opacity:1;fill-rule:nonzero;stroke:none">Statistics for all 8 coverage indicators are available, disaggregated by equity stratifiers</tspan></text>
+         y="65.547737"
+         style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.39999962px;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std';writing-mode:lr-tb;fill:#4f4c4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         x="-333.22467">Statistics for all 8 coverage indicators are available, disaggregated by equity stratifiers</tspan></text>
 <g
        transform="translate(-375.58408,-633.1733)"
        id="g294"><g
@@ -843,12 +841,12 @@
          x="-305.04987">Country Compacts</tspan></text>
 <text
        style="font-size:12px"
-       y="327.61691"
+       y="330.81693"
        x="-333.33408"
        id="text384"
        transform="scale(1,-1)"><tspan
          style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.39999962px;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std';writing-mode:lr-tb;fill:#4f4c4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         y="327.61691"
+         y="330.81693"
          sodipodi:role="line"
          id="tspan386"
          x="-333.33408">Country-led reporting system is in place for externally funded expenditures and predictable commitments</tspan></text>
@@ -934,24 +932,24 @@
        transform="scale(1,-1)"
        id="text7355"
        x="-332.85266"
-       y="211.20776"
+       y="268.93051"
        style="font-size:12px"><tspan
          id="tspan7357"
          sodipodi:role="line"
-         y="211.20776"
+         y="268.93051"
          style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.39999962px;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std';writing-mode:lr-tb;fill:#4f4c4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
          x="-332.85266">Total annual RMNCH expenditure (US$)</tspan></text>
 <text
        transform="scale(1,-1)"
        id="text7345"
        x="-332.85266"
-       y="268.77124"
+       y="211.04851"
        style="font-size:12px"><tspan
-         y="268.77124"
+         y="211.04851"
          id="tspan7347"
          sodipodi:role="line"
          style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.39999962px;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std';writing-mode:lr-tb;fill:#4f4c4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="-332.85266">Total health expenditure per capita tracked by financial source</tspan></text>
+         x="-332.85266">Total health expenditure per capita tracked by financing source</tspan></text>
 <g
        transform="translate(-375.58408,-633.1733)"
        id="g492"><g
@@ -1354,12 +1352,12 @@
          x="-305.54208">National Oversight</tspan></text>
 <text
        style="font-size:12px"
-       y="492.70886"
+       y="499.10889"
        x="-333.18079"
        id="text576"
        transform="scale(1,-1)"><tspan
          style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.39999962px;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std';writing-mode:lr-tb;fill:#4f4c4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         y="492.70886"
+         y="499.10889"
          sodipodi:role="line"
          id="tspan580"
          x="-333.18079">Mutual assessment of progress in implementing agreed health sector commitments exists</tspan></text>
@@ -1367,13 +1365,13 @@
        transform="scale(1,-1)"
        id="text7361"
        style="font-size:12px"
-       y="471.78488"
+       y="474.98489"
        x="-332.98758"><tspan
          id="tspan7363"
          sodipodi:role="line"
          style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.39999962px;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std';writing-mode:lr-tb;fill:#4f4c4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
          x="-332.98758"
-         y="471.78488">Country has conducted annual national health sector review process in the past year</tspan></text>
+         y="474.98489">Country has conducted annual national health sector review process in the past year</tspan></text>
 <g
        transform="translate(-375.58408,-633.1733)"
        id="g582"><g
@@ -1408,7 +1406,6 @@
        id="text602"
        transform="scale(1,-1)"><tspan
          style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.39999962px;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std';writing-mode:lr-tb;fill:#4f4c4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         x="-333.18079 -328.04248 -325.70731 -321.0369 -316.36649 -311.69611 -309.8313 -307.49609 -302.82568 -300.49051 -296.2905 -291.62009 -287.42007 -285.0849 -280.41449 -277.61728 -275.28207 -270.61169 -265.94128 -263.14407 -260.8089 -256.13849 -253.34131 -246.34409 -241.67371 -237.0033 -232.80328 -228.13289 -225.7977 -223.00049 -218.33009 -213.6597 -208.98929 -206.19209 -203.85689 -201.5217 -199.18649 -194.51611 -191.71889 -189.3837 -187.04849 -182.37811 -177.7077 -175.3725 -170.70209 -167.90491 -163.2345 -159.03448 -154.36409 -149.6937 -147.82889 -143.15849 -138.4881 -136.15289 -131.9529 -127.28249 -122.61211 -119.81492 -117.47971 -115.61489 -111.41489 -109.07972 -104.40931 -100.2093 -95.538918 -93.67411 -91.809303 -87.138893 -82.468513 -80.603683 -75.933327 -73.598122 -71.733315 -67.062904 -64.727699 -62.392494 -57.722084 -53.051674 -50.716469 -46.04612 -41.37571 -36.705296 -34.840488 -32.975712 -28.775667 -26.440523 -21.770113 -17.099703 -10.10251 -5.4321008 -3.5672934"
          y="554.21515"
          sodipodi:role="line"
          id="tspan604">A health sector performance report for the preceding year is available in the public domain</tspan></text>
@@ -1426,7 +1423,7 @@
            id="g618"
            transform="translate(43.4063,148.2393)"><path
              inkscape:connector-curvature="0"
-             d="m 0,-0.8001407 510.719,0"
+             d="m 0,-5.6001407 510.719,0"
              style="fill:none;stroke:#4f4c4d;stroke-width:0.50700003;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:0, 0.883;stroke-dashoffset:0;stroke-opacity:1"
              id="path620" /></g><g
            id="g622"
@@ -1515,7 +1512,7 @@
            transform="scale(1,-1)"><tspan
              x="-181.93797"
              y="-191.52744"
-             style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:14px;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std';letter-spacing:0.5px;word-spacing:-0.43989143px;writing-mode:lr-tb;fill:#224e61;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14px;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std';letter-spacing:0.5px;word-spacing:-0.43989143px;writing-mode:lr-tb;fill:#224e61;fill-opacity:1;fill-rule:nonzero;stroke:none"
              sodipodi:role="line"
              id="tspan4193">Country Overview</tspan></text>
 </g><text
@@ -1584,17 +1581,17 @@
        xml:space="preserve"
        style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.5px;line-height:125%;font-family:arial;-inkscape-font-specification:arial;text-align:start;writing-mode:lr-tb;text-anchor:start;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#4f4c4d;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.29223747;marker:none;enable-background:accumulate"
        x="-333.13693"
-       y="62.573555"
+       y="34.242172"
        id="text7318"
        sodipodi:linespacing="125%"
        transform="scale(1,-1)"><tspan
          x="-333.13693"
-         y="62.573555"
+         y="34.242172"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.39999962px;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std'"
          id="tspan7322">Data for all 3 impact indicators are available, based on data collected in the preceding 3 years,</tspan><tspan
          id="tspan6822"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.39999962px;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std'"
-         y="62.573555"
+         y="34.242172"
          x="-333.13693"
          dy="10">disaggregated by equity stratifiers</tspan></text>
 <flowRoot

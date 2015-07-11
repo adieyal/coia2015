@@ -68,7 +68,10 @@
 
             var progress = percent;
             front.attr('d', arc.endAngle(twoPi * progress));
-            numberText.text(this.format(progress));
+            if (progress == 0)
+                numberText.classed('nodata', true).text('No Data');
+            else
+                numberText.text(this.format(progress));
         }
     }
 })();

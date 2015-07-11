@@ -10,6 +10,9 @@ class CountryData(object):
     def page1(self, country):
         tmpl = env.get_template('page1.html')
         data = parse()
+        print data.keys()
+        for k in sorted(data.keys()):
+            print k
         ctx = data[country]
         return tmpl.render(context=json.dumps(ctx))
 

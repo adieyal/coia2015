@@ -5,6 +5,10 @@
     font-color: white;
 }
 
+.progdial text.nodata {
+    font-size: 8px;
+}
+
 .progdial .center {
     fill: #224e61;
 }

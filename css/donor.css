@@ -4,6 +4,12 @@
 
 .c3-axis text {
     font-size: 6px;
+    fill: #7b7979;
+}
+
+.c3-axis path, .c3-axis line {
+    stroke: #7b7979;
+    stroke-width: 0.45px;
 }
 
 .c3-texts text {
@@ -35,18 +41,18 @@
     display: none;
 }
 
-#total-commitments .c3-target-data1 path,
-#total-commitments .c3-texts-data1 text,
-#rmnch .c3-target-data1 path,
-#rmnch .c3-texts-data1 text,
 #bimulti .c3-target-data1 path
 {
     fill: #b5d7e6 !important;
     stroke: none;
 }
 
+#total-commitments .c3-target-data1 path,
+#total-commitments .c3-texts-data1 text,
 #health-total .c3-target-data1 path,
 #health-total .c3-texts-data1 text,
+#rmnch .c3-target-data1 path,
+#rmnch .c3-texts-data1 text,
 #bimulti .c3-target-data2 path
 {
     fill: #224e61 !important;
@@ -67,7 +73,7 @@
 }
 
 .progdial .foreground {
-    fill: #b5d7e6;
+    fill: #224e61;
 }
 
 .progress-meter text {
@@ -89,9 +95,14 @@
     font-size:6.2px;
     font-family: "Helvetica LT Std";
     color: #4f4c4d;
-    text-align: justify;
+    text-align: left;
 }
 
 .pledge rect {
     display: none;
+}
+
+.pledge tspan {
+    font-family: "Helvetica LT Std";
+    font-size: 6px;
 }

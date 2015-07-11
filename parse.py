@@ -3,7 +3,7 @@ import os
 import base64
 from misc import fon, foz, ion, ioz, clean_filename, format_thousands
 
-FILENAME = "data.xlsx"
+FILENAME = "data/data.xlsx"
 book = xlrd.open_workbook(FILENAME)
 
 
@@ -18,7 +18,7 @@ def get_demographic_population(data):
         datum['total-population'] = '{:,}'.format(ioz(values[1]))
         datum['under5-population'] = '{:,}'.format(ioz(values[3]))
         datum['births'] = '{:,}'.format(ioz(values[5]))
-        datum['adolescent-birth'] = '{:,}'.format(int(round(ioz(values[7]))))
+        datum['adolescent-birth'] = '{:,}'.format(ioz(round(foz(values[7]))))
         datum['abortion-status'] = ioz(values[15])
         datum['access-contraceptives'] = values[11].upper()
         datum['family-planning'] = foz(values[13])
