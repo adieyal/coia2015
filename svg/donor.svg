@@ -476,20 +476,32 @@
            x="0">The World Bank</tspan></text>
 <text
          transform="matrix(1,0,0,-1,35.9507,103.0518)"
-         id="text432"
+         id="address1"
          class="address"><tspan
-           style="font-size:6px;font-variant:normal;font-weight:normal;font-stretch:normal;writing-mode:lr-tb;fill:#4f4c4d;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std'"
+           style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6px;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std';writing-mode:lr-tb;fill:#4f4c4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
            y="0"
            sodipodi:role="line"
-           id="tspan434">1818 H Street, NW Washington, DC 20433 USA </tspan></text>
+           id="tspan434"
+           x="0">1818 H Street, NW</tspan></text>
+<text
+         class="address"
+         id="address2"
+         transform="scale(1,-1)"
+         x="35.950699"
+         y="-95.714302"><tspan
+           x="35.950699"
+           id="tspan5703"
+           sodipodi:role="line"
+           y="-95.714302"
+           style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6px;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std';writing-mode:lr-tb;fill:#4f4c4d;fill-opacity:1;fill-rule:nonzero;stroke:none">Washington, DC 20433 USA</tspan></text>
 <text
          transform="scale(1,-1)"
          id="text436"
          class="url"
          x="35.950699"
-         y="-89.251801"><tspan
+         y="-87.376801"><tspan
            style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6px;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std';writing-mode:lr-tb;fill:#4f4c4d;fill-opacity:1;fill-rule:nonzero;stroke:none"
-           y="-89.251801"
+           y="-87.376801"
            sodipodi:role="line"
            id="tspan438"
            x="35.950699">www.worldbank.org</tspan></text>

@@ -89,7 +89,8 @@ Donor.prototype = {
         d3.xml('/svg/donor.svg', function(xml) {
             var importedNode = document.importNode(xml.documentElement, true);
             var donor = d3.select(n[0][0].appendChild(importedNode.cloneNode(true)));
-            donor.selectAll('.address tspan').text(ctx.contact.address);
+            donor.selectAll('#address1 tspan').text(ctx.contact.address1);
+            donor.selectAll('#address2 tspan').text(ctx.contact.address2);
             donor.selectAll('.url tspan').text(ctx.contact.website);
             me.render_bars(ctx);
             add_stacked(
@@ -440,6 +441,8 @@ var adjust_canada = function() {
         {attrs: {dy : 13}, styles : {fill: '#ffffff'}}, 
         {attrs: {dy : 13}, styles : {fill: '#ffffff'}}, 
     ]);
+    d3.select('#total-commitments .c3-axis-y .domain').attr('d', 'M0,1H0V76')
+    d3.select('#health-total .c3-axis-y .domain').attr('d', 'M0,8H0V82')
 }
 
 var adjust_gavi_alliance = function() {
@@ -536,6 +539,7 @@ var adjust_france = function() {
     ]);
 
     d3.select('#health-total .c3-axis-y .domain').attr('d', 'M0,8H0V76')
+    d3.select('#rmnch .c3-axis-y .domain').attr('d', 'M0,1H0V76')
 }
 
 var adjust_germany = function() {

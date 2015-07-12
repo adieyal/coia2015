@@ -131,8 +131,9 @@ def get_contact(data):
         datum = data.setdefault(donor, {})
         
         datum['contact'] = {
-            'address' : ', '.join(values[1].split('\n')),
-            'website' : values[2]
+            'address1' : ', '.join(values[1].split('\n')),
+            'address2' : ', '.join(values[2].split('\n')),
+            'website' : values[3]
         }
 
 def get_funder_type(data):
