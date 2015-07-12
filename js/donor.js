@@ -114,6 +114,8 @@ Donor.prototype = {
             }
 
             me.add_pledges(ctx)
+
+            post_process(ctx.donor.name);
         })
     }
 }
@@ -238,7 +240,7 @@ var generate_bar = function(node, data, w, h) {
     var data = { 
         years : data.map(function(v, idx, arr) { return v[0]; }),
         values1 : data.map(function(v, idx, arr) { return v[1]; }),
-        values2 : data.map(function(v, idx, arr) { return v[2]; })
+        values2 : data.map(function(v, idx, arr) { if (v[2] == 0) return null; else return v[2]; })
     }
             
     data.values1.unshift('data1');
@@ -321,4 +323,388 @@ var generate_bar = function(node, data, w, h) {
             }
         }
     });
+}
+
+var remove_health_total = function() {
+    d3.selectAll('#health-total .c3-target-data2').remove();
+    d3.selectAll('#health-total .c3-chart-text').remove();
+    d3.selectAll('#health-total').remove()
+    d3.selectAll('#health-total .c3-grid-lines').remove();
+    d3.selectAll('#health-total .c3-texts-data2').remove();
+
+    d3.selectAll('#g666').remove();
+    d3.selectAll('#g658').remove();
+    d3.selectAll('#text8909').remove();
+    d3.selectAll('#text662').remove();
+    d3.selectAll('#path474').remove();
+
+    d3.selectAll('#no-health-data').classed('hidden', false);
+    d3.selectAll('#health-pullout').classed('hidden', true);
+
+}
+
+var remove_rmnch = function() {
+
+    d3.selectAll('#text680').remove();
+    d3.selectAll('#g684').remove();
+    d3.selectAll('#rmnch .c3-grid-lines').remove();
+    d3.selectAll('#rmnch .c3-texts-data2').remove();
+    d3.selectAll('#rmnch').remove()
+    d3.selectAll('#rmnch .c3-chart-text').remove();
+    d3.selectAll('#rmnch .c3-target-data2').remove();
+    d3.selectAll('#no-rmnch-data').classed('hidden', false);
+    d3.selectAll('#rmnch-static').classed('hidden', true);
+}
+
+var remove_bimulti = function() {
+    d3.select('#bimulti').remove();
+    d3.select('#bimulti-block .legend').classed('hidden', true);
+    d3.selectAll('#no-bimulti-data').classed('hidden', false);
+}
+
+var move_labels = function(node, adjustments) {
+    for (i in adjustments) {
+        node2 = node.select('text.c3-text-' + i);
+        adj = adjustments[i];
+
+        if (adj == null)
+            continue;
+
+        if (typeof adj.styles == 'object') {
+            for (key in adj.styles) {
+                node2.style(key, adj.styles[key]);
+            }
+        }
+
+        if (typeof adj.attrs == 'object') {
+            for (key in adj.attrs) {
+                node2.attr(key, adj.attrs[key]);
+            }
+        }
+    }
+}
+
+var adjust_russia = function() {
+    remove_health_total();
+    remove_rmnch();
+    d3.selectAll('#total-commitments .c3-event-rect').remove();
+    d3.selectAll('#total-commitments .c3-texts-data1 .c3-text-0').remove();
+    d3.selectAll('#total-commitments .c3-texts-data1 .c3-text-1').remove();
+    d3.selectAll('#total-commitments .c3-texts-data1 .c3-text-2').remove();
+    d3.selectAll('#total-commitments .c3-target-data2').remove();
+    d3.select('#total-commitments .c3-axis-y .domain').attr('d', 'M0,1H0V76')
+    d3.select('#total-commitments .c3-axis-y2').remove();
+    d3.select('#pledge2').remove();
+    d3.select('#pledge3').remove();
+    d3.select('#pledge4').remove();
+}
+
+var adjust_australia = function() {
+
+    d3.select('#g8707 text').attr('dx', -65);
+    move_labels(d3.selectAll('#total-commitments .c3-texts-data1'), [
+        {attrs: {dy : 9}, styles : {fill: '#ffffff'}}, 
+        null,
+        {attrs: {dy : 9}, styles : {fill: '#ffffff'}}, 
+        null,
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}} 
+    ]);
+
+    move_labels(d3.selectAll('#total-commitments .c3-texts-data2'), [
+        null,
+        {attrs: {dy : 2}, styles : {fill: '#ffffff'}}, 
+        null,
+        {attrs: {dy : -2}, styles : {fill: '#ffffff'}}
+    ]);
+
+    move_labels(d3.selectAll('#health-total .c3-texts-data1'), [
+        null,
+        {attrs: {dy : 9}, styles : {fill: '#ffffff'}}, 
+        null,
+        {attrs: {dy : 9}, styles : {fill: '#ffffff'}}
+    ]);
+    d3.select('#health-total .c3-axis-y .domain').attr('d', 'M0,0H0V76')
+}
+
+var adjust_canada = function() {
+    move_labels(d3.selectAll('#total-commitments .c3-texts-data1'), [
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}}, 
+        {attrs: {dy : 12}, styles : {fill: '#ffffff'}}, 
+        {attrs: {dy : 9}, styles : {fill: '#ffffff'}}, 
+        {attrs: {dy : 9}, styles : {fill: '#ffffff'}}
+    ]);
+
+    move_labels(d3.selectAll('#health-total .c3-texts-data1'), [
+        {attrs: {dy : 8}, styles : {fill: '#ffffff'}}, 
+        {attrs: {dy : 9}, styles : {fill: '#ffffff'}}, 
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}}, 
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}}, 
+    ]);
+}
+
+var adjust_gavi_alliance = function() {
+    d3.select('#g8707 text').attr('dx', -20);
+    d3.selectAll('#total-commitments .c3-text-0').remove();
+    d3.selectAll('#total-commitments .c3-text-1').remove();
+    d3.selectAll('#total-commitments .c3-texts-data2 .c3-text-2').remove();
+    d3.selectAll('#total-commitments .c3-target-data2').remove();
+
+    d3.selectAll('#health-total .c3-text-0').remove();
+    d3.selectAll('#health-total .c3-text-1').remove();
+    d3.selectAll('#health-total .c3-circle-0').remove();
+    d3.selectAll('#health-total .c3-circle-1').remove();
+
+    move_labels(d3.selectAll('#health-total .c3-texts-data1'), [
+        null, null, null, null,
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}}
+    ]);
+
+    remove_bimulti();
+
+}
+
+var adjust_global_fund = function() {
+    d3.select('#g8707 text').attr('dx', -100);
+    d3.selectAll('#total-commitments .c3-texts-data1 .c3-text-0').remove();
+    d3.selectAll('#total-commitments .c3-texts-data2').remove();
+
+    d3.selectAll('#health-total .c3-text-0').remove();
+
+    move_labels(d3.selectAll('#health-total .c3-texts-data1'), [
+        null, null, null,
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}}
+    ]);
+
+    remove_bimulti();
+}
+
+var adjust_japan = function() {
+    move_labels(d3.selectAll('#health-total .c3-texts-data1'), [
+        null, null, null,
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+    ]);
+    d3.select('#rmnch .c3-axis-y .domain').attr('d', 'M0,1H0V76')
+}
+
+var adjust_world_bank = function() {
+    d3.selectAll('#total-commitments .c3-texts-data2').remove();
+    move_labels(d3.selectAll('#health-total .c3-texts-data1'), [
+        null, null, null, null,
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}}
+    ]);
+
+    remove_bimulti();
+}
+
+var adjust_gates_foundation = function() {
+    d3.selectAll('#total-commitments .c3-texts-data2').remove();
+    d3.selectAll('#total-commitments .c3-texts-data1 .c3-text-0').remove();
+    d3.selectAll('#total-commitments .c3-texts-data1 .c3-text-1').remove();
+    d3.selectAll('#total-commitments .c3-texts-data1 .c3-text-2').remove();
+
+    remove_health_total();
+    d3.selectAll('#rmnch .c3-texts-data1 .c3-text-0').remove();
+    remove_bimulti();
+    d3.select('#total-commitments .c3-axis-y .domain').attr('d', 'M0,1H0V76')
+}
+
+var adjust_france = function() {
+    move_labels(d3.selectAll('#total-commitments .c3-texts-data1'), [
+        null,
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}}
+    ]);
+
+    move_labels(d3.selectAll('#total-commitments .c3-texts-data2'), [
+        null, null, null, null,
+        {attrs: {dy : -3}}
+    ]);
+
+    move_labels(d3.selectAll('#health-total .c3-texts-data2'), [
+        {attrs: {dy : -3}},
+        null, null, null,
+        {attrs: {dy : -1}}
+    ]);
+    d3.select('#total-commitments .c3-axis-y .domain').attr('d', 'M0,1H0V76')
+
+    move_labels(d3.selectAll('#health-total .c3-texts-data1'), [
+        null, null, null, null,
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}}
+    ]);
+
+    d3.select('#health-total .c3-axis-y .domain').attr('d', 'M0,8H0V76')
+}
+
+var adjust_germany = function() {
+    move_labels(d3.selectAll('#total-commitments .c3-texts-data1'), [
+        null,
+        null,
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}}
+    ]);
+
+    move_labels(d3.selectAll('#health-total .c3-texts-data1'), [
+        {attrs: {dy : 9}, styles : {fill: '#ffffff'}},
+        null,
+        null,
+        null,
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}}
+    ]);
+    d3.select('#total-commitments .c3-axis-y .domain').attr('d', 'M0,1H0V76')
+    d3.select('#health-total .c3-axis-y .domain').attr('d', 'M0,4H0V76')
+    d3.select('#rmnch .c3-axis-y .domain').attr('d', 'M0,3H0V76')
+
+    d3.select('#pledge4').remove();
+}
+
+var adjust_italy = function() {
+    move_labels(d3.selectAll('#total-commitments .c3-texts-data1'), [
+        null,
+        null,
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+    ]);
+
+    move_labels(d3.selectAll('#health-total .c3-texts-data1'), [
+        null,
+        null,
+        {attrs: {dy : 15}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 15}, styles : {fill: '#ffffff'}},
+    ]);
+
+    d3.select('#total-commitments .c3-axis-y .domain').attr('d', 'M0,1H0V76')
+    d3.select('#health-total .c3-axis-y .domain').attr('d', 'M0,8H0V76')
+    d3.select('#rmnch .c3-axis-y .domain').attr('d', 'M0,-2H0V76')
+    d3.select('#pledge2').remove();
+    d3.select('#pledge3').remove();
+    d3.select('#pledge4').remove();
+}
+
+var adjust_norway = function() {
+    move_labels(d3.selectAll('#total-commitments .c3-texts-data1'), [
+        {attrs: {dy : -5}},
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+    ]);
+
+    d3.select('#total-commitments .c3-axis-y .domain').attr('d', 'M0,1H0V76')
+    d3.select('#health-total .c3-axis-y .domain').attr('d', 'M0,2H0V76')
+    d3.select('#rmnch .c3-axis-y .domain').attr('d', 'M0,0H0V76')
+}
+
+var adjust_sweden = function() {
+    move_labels(d3.selectAll('#total-commitments .c3-texts-data1'), [
+        {attrs: {dy : -5}},
+        null,
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+    ]);
+
+    move_labels(d3.selectAll('#total-commitments .c3-texts-data2'), [
+        null, null,
+        {attrs: {dy : 2}},
+        null,
+        {attrs: {dy : -2}}
+    ]);
+
+    move_labels(d3.selectAll('#health-total .c3-texts-data2'), [
+        null, null, null,
+        {attrs: {dy : -5}}
+        
+    ]);
+
+    d3.select('#total-commitments .c3-axis-y .domain').attr('d', 'M0,1H0V76')
+    d3.select('#health-total .c3-axis-y .domain').attr('d', 'M0,2H0V76')
+    d3.select('#rmnch .c3-axis-y .domain').attr('d', 'M0,0H0V76')
+
+}
+
+var adjust_united_kingdom = function() {
+    move_labels(d3.selectAll('#total-commitments .c3-texts-data1'), [
+        {attrs: {dy : -5}},
+        null,
+        null,
+        null,
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+    ]);
+
+    move_labels(d3.selectAll('#health-total .c3-texts-data1'), [
+        null,
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+    ]);
+
+    move_labels(d3.selectAll('#health-total .c3-texts-data2'), [
+        {attrs: {dy : -2}},
+        null,
+        null,
+        null,
+        {attrs: {dy : 2}},
+    ]);
+    d3.select('#total-commitments .c3-axis-y .domain').attr('d', 'M0,1H0V76')
+    d3.select('#health-total .c3-axis-y .domain').attr('d', 'M0,2H0V76')
+    d3.select('#rmnch .c3-axis-y .domain').attr('d', 'M0,0H0V76')
+}
+
+var adjust_united_states = function() {
+
+    move_labels(d3.selectAll('#total-commitments .c3-texts-data1'), [
+        null,
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+    ]);
+
+    move_labels(d3.selectAll('#health-total .c3-texts-data1'), [
+        null,
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+    ]);
+
+    move_labels(d3.selectAll('#health-total .c3-texts-data2'), [
+        {attrs: {dy : -3}},
+    ]);
+
+    d3.select('#total-commitments .c3-axis-y .domain').attr('d', 'M0,1H0V76')
+    d3.select('#health-total .c3-axis-y .domain').attr('d', 'M0,2H0V76')
+    d3.select('#rmnch .c3-axis-y .domain').attr('d', 'M0,5H0V76')
+}
+
+var post_process = function(donor) {
+    d3.selectAll('#g902').remove();
+    d3.selectAll('#g1102').remove();
+    d3.selectAll('#g1106').remove();
+
+    d3.selectAll('#health-total .c3-texts-data1 text').style('fill', '#224e61')
+    d3.selectAll('.c3-texts-data1 text').style('fill', '#224e61')
+    funcs = {
+        'Russia' : adjust_russia,
+        'Australia' : adjust_australia,
+        'Canada' : adjust_canada,
+        'GAVI Alliance' : adjust_gavi_alliance,
+        'Global Fund' : adjust_global_fund,
+        'Japan' : adjust_japan,
+        'World Bank' : adjust_world_bank,
+        'Bill & Melinda Gates Foundation' : adjust_gates_foundation,
+        'France' : adjust_france,
+        'Germany' : adjust_germany,
+        'Italy' : adjust_italy,
+        'Norway' : adjust_norway,
+        'Sweden' : adjust_sweden,
+        'United Kingdom' : adjust_united_kingdom,
+        'United States' : adjust_united_states,
+    }
+
+    func = funcs[donor];
+    if (donor != undefined) func();
+
 }

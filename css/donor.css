@@ -1,3 +1,7 @@
+.hidden {
+    display: none !important;
+}
+
 .c3-grid line {
     stroke-dasharray: 2;
 }
@@ -48,9 +52,7 @@
 }
 
 #total-commitments .c3-target-data1 path,
-#total-commitments .c3-texts-data1 text,
 #health-total .c3-target-data1 path,
-#health-total .c3-texts-data1 text,
 #rmnch .c3-target-data1 path,
 #rmnch .c3-texts-data1 text,
 #bimulti .c3-target-data2 path
@@ -83,6 +85,10 @@
 
 #perc_gdp .progdial text {
     font-size: 12px !important;
+}
+
+#perc_health .progdial text.nodata, #perc_gdp .progdial text.nodata {
+    font-size: 10px !important;
 }
 
 .perc_year {

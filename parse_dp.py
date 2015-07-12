@@ -131,7 +131,7 @@ def get_contact(data):
         datum = data.setdefault(donor, {})
         
         datum['contact'] = {
-            'address' : values[1],
+            'address' : ', '.join(values[1].split('\n')),
             'website' : values[2]
         }
 
