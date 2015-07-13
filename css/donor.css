@@ -18,6 +18,11 @@
 
 .c3-texts text {
     font-size: 6px;
+    font-weight: bold;
+}
+
+.c3-text, .tick text {
+    font-family: "Helvetica LT Std";
 }
 
 .c3-axis-x .tick line {

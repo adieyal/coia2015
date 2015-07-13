@@ -193,12 +193,17 @@
      id="namedview4"
      showgrid="false"
      inkscape:zoom="2.5600001"
-     inkscape:cx="185.60392"
-     inkscape:cy="105.05084"
+     inkscape:cx="117.08568"
+     inkscape:cy="866.95766"
      inkscape:window-x="65"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g10" /><g
+     inkscape:current-layer="g10"
+     showguides="true"
+     inkscape:guide-bbox="true"><sodipodi:guide
+       position="46.403881,508.23299"
+       orientation="1,0"
+       id="guide5705" /></sodipodi:namedview><g
      id="g10"
      inkscape:groupmode="layer"
      inkscape:label="COIA Scorecards_2015_DonorProfile v4"
@@ -209,9 +214,10 @@
        d="m 262.148,123.575 -232.369,0 0,-93.388 232.369,0 0,93.388 z m 1.352,-94.891 -235.068,0 0,96.396 235.068,0 0,-96.396 z"
        style="fill:#a7a5a6;fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="path60" /><path
-       d="m 561.346,759.559 -527.331,0 0,14.173 527.331,0 0,-14.173 z"
+       d="m 558.25241,759.559 -527.331004,0 0,14.173 527.331004,0 0,-14.173 z"
        style="fill:#224e61;fill-opacity:1;fill-rule:evenodd;stroke:none"
-       id="path62" /><path
+       id="path62"
+       inkscape:connector-curvature="0" /><path
        d="m 259.321,311.583 -225.306,0 0,14.172 225.306,0 0,-14.172 z"
        style="fill:#224e61;fill-opacity:1;fill-rule:evenodd;stroke:none"
        id="path68" /><path
@@ -308,13 +314,15 @@
          d="M 0,0 0,0"
          style="fill:none;stroke:#4f4c4d;stroke-opacity:1;stroke-width:0.507;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none"
          id="path502" /></g><text
-       transform="matrix(1,0,0,-1,38.1592,747.3628)"
-       id="text508"><tspan
+       transform="scale(1,-1)"
+       id="text508"
+       x="37.52161"
+       y="-747.36279"><tspan
          style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.5px;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std';writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         y="0"
+         y="-747.36279"
          sodipodi:role="line"
          id="tspan510"
-         x="0">ODA total 2000-2013 </tspan></text>
+         x="37.52161">ODA total 2000-2013 </tspan></text>
 <text
        transform="matrix(1,0,0,-1,112.49245,747.3628)"
        id="text512"><tspan
@@ -342,13 +350,15 @@
        d="m 561.346,600.199 -527.331,0 0,14.173 527.331,0 0,-14.173 z"
        style="fill:#94a1a9;fill-opacity:1;fill-rule:evenodd;stroke:none"
        id="path590" /><text
-       transform="matrix(1,0,0,-1,38.1592,604.3628)"
-       id="text592"><tspan
+       transform="scale(1,-1)"
+       id="text592"
+       x="37.319111"
+       y="-604.36279"><tspan
          style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.5px;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std';writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         y="0"
+         y="-604.36279"
          sodipodi:role="line"
          id="tspan594"
-         x="0">Health total 2000-2013</tspan></text>
+         x="37.319111">Health total 2000-2013</tspan></text>
 <text
        transform="matrix(1,0,0,-1,119.0242,604.3628)"
        id="text596"><tspan
@@ -361,13 +371,15 @@
        d="m 561.346,455.961 -527.331,0 0,14.173 527.331,0 0,-14.173 z"
        style="fill:#94a1a9;fill-opacity:1;fill-rule:evenodd;stroke:none"
        id="path612" /><text
-       transform="matrix(1,0,0,-1,38.1592,460.1255)"
-       id="text614"><tspan
+       transform="scale(1,-1)"
+       id="text614"
+       x="37.281612"
+       y="-460.12549"><tspan
          style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.5px;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std';writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         y="0"
+         y="-460.12549"
          sodipodi:role="line"
          id="tspan616"
-         x="0">RMNCH 2008-2012 </tspan></text>
+         x="37.281612">RMNCH 2008-2012 </tspan></text>
 <text
        transform="matrix(1,0,0,-1,106.1047,460.1255)"
        id="text618"><tspan
@@ -458,7 +470,7 @@
        x="37.131611"
        id="text32"
        transform="scale(1,-1)"><tspan
-         style="font-size:9px;font-variant:normal;font-weight:300;font-stretch:normal;letter-spacing:-0.25px;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std'"
+         style="font-variant:normal;font-weight:300;font-stretch:normal;font-size:9px;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std';letter-spacing:-0.25px;writing-mode:lr-tb;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
          sodipodi:role="line"
          id="tspan34-1"
          y="-763.30127"
@@ -596,7 +608,7 @@
            style="font-size:12px;fill:#224e61;fill-opacity:1"><tspan
              id="tspan4193-5"
              sodipodi:role="line"
-             style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:14px;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std';letter-spacing:0.5px;word-spacing:-0.43989143px;writing-mode:lr-tb;fill:#224e61;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14px;font-family:'Helvetica LT Std';-inkscape-font-specification:'Helvetica LT Std';letter-spacing:0.5px;word-spacing:-0.43989143px;writing-mode:lr-tb;fill:#224e61;fill-opacity:1;fill-rule:nonzero;stroke:none"
              y="-831.36005"
              x="141.02338">Donor Profile</tspan></text>
 </g><g

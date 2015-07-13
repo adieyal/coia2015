@@ -308,8 +308,9 @@ var generate_bar = function(node, data, w, h) {
                 },
                 padding : {
                     top: 15,
-                    bottom: 10
-                }
+                    bottom: 0
+                },
+                min : 0,
             }
         },
         legend: {
@@ -398,48 +399,46 @@ var adjust_russia = function() {
     d3.select('#pledge2').remove();
     d3.select('#pledge3').remove();
     d3.select('#pledge4').remove();
+    d3.select('#transparency-block .numerator').text('-');
+    d3.select('#pledge1 text').remove();
 }
 
 var adjust_australia = function() {
 
     d3.select('#g8707 text').attr('dx', -65);
     move_labels(d3.selectAll('#total-commitments .c3-texts-data1'), [
-        {attrs: {dy : 9}, styles : {fill: '#ffffff'}}, 
         null,
-        {attrs: {dy : 9}, styles : {fill: '#ffffff'}}, 
+        null,
+        null,
         null,
         {attrs: {dy : 13}, styles : {fill: '#ffffff'}} 
     ]);
 
-    move_labels(d3.selectAll('#total-commitments .c3-texts-data2'), [
-        null,
-        {attrs: {dy : 2}, styles : {fill: '#ffffff'}}, 
-        null,
-        {attrs: {dy : -2}, styles : {fill: '#ffffff'}}
-    ]);
-
-    move_labels(d3.selectAll('#health-total .c3-texts-data1'), [
-        null,
-        {attrs: {dy : 9}, styles : {fill: '#ffffff'}}, 
-        null,
-        {attrs: {dy : 9}, styles : {fill: '#ffffff'}}
-    ]);
     d3.select('#health-total .c3-axis-y .domain').attr('d', 'M0,0H0V76')
+    d3.select('#pledge4').remove();
 }
 
 var adjust_canada = function() {
     move_labels(d3.selectAll('#total-commitments .c3-texts-data1'), [
-        {attrs: {dy : 13}, styles : {fill: '#ffffff'}}, 
-        {attrs: {dy : 12}, styles : {fill: '#ffffff'}}, 
-        {attrs: {dy : 9}, styles : {fill: '#ffffff'}}, 
-        {attrs: {dy : 9}, styles : {fill: '#ffffff'}}
+        null, null, null,
+        {attrs: {dy : 9}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 18}, styles : {fill: '#ffffff'}}
+    ]);
+
+    move_labels(d3.selectAll('#total-commitments .c3-texts-data2'), [
+        null, null, null, null,
+        {attrs: {dy : -4}, styles : {fill: '#ffffff'}}
     ]);
 
     move_labels(d3.selectAll('#health-total .c3-texts-data1'), [
-        {attrs: {dy : 8}, styles : {fill: '#ffffff'}}, 
-        {attrs: {dy : 9}, styles : {fill: '#ffffff'}}, 
+        null, null,
         {attrs: {dy : 13}, styles : {fill: '#ffffff'}}, 
-        {attrs: {dy : 13}, styles : {fill: '#ffffff'}}, 
+        {attrs: {dy : 16}, styles : {fill: '#ffffff'}}, 
+    ]);
+
+    move_labels(d3.selectAll('#health-total .c3-texts-data2'), [
+        null, null, null, null,
+        {attrs: {dy : 2}, styles : {fill: '#ffffff'}}, 
     ]);
     d3.select('#total-commitments .c3-axis-y .domain').attr('d', 'M0,1H0V76')
     d3.select('#health-total .c3-axis-y .domain').attr('d', 'M0,8H0V82')
@@ -459,10 +458,12 @@ var adjust_gavi_alliance = function() {
 
     move_labels(d3.selectAll('#health-total .c3-texts-data1'), [
         null, null, null, null,
-        {attrs: {dy : 13}, styles : {fill: '#ffffff'}}
+        {attrs: {dy : 17}, styles : {fill: '#ffffff'}}
     ]);
+    d3.select('#total-commitments .c3-axis-y2').remove();
 
     remove_bimulti();
+    d3.selectAll('#no-bimulti-data tspan').text("This chart is not relevant for this agency")
 
 }
 
@@ -475,17 +476,35 @@ var adjust_global_fund = function() {
 
     move_labels(d3.selectAll('#health-total .c3-texts-data1'), [
         null, null, null,
-        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 15}, styles : {fill: '#ffffff'}},
         {attrs: {dy : 13}, styles : {fill: '#ffffff'}}
     ]);
 
     remove_bimulti();
+    d3.select('#total-commitments .c3-axis-y2').remove();
+    d3.selectAll('#no-bimulti-data tspan').text("This chart is not relevant for this agency")
+    d3.select('#title .donor-name tspan').text('The Global Fund (GFATM)').style('font-size', '9px');
 }
 
 var adjust_japan = function() {
+    move_labels(d3.selectAll('#total-commitments .c3-texts-data2'), [
+        null,
+        {attrs: {dy : 15}},
+        {attrs: {dy : 15}},
+        {attrs: {dy : 15}},
+    ]);
+
     move_labels(d3.selectAll('#health-total .c3-texts-data1'), [
-        null, null, null,
-        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 11}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : -2}},
+    ]);
+
+    move_labels(d3.selectAll('#health-total .c3-texts-data2'), [
+        null,
+        {attrs: {dy : 16}},
+        {attrs: {dy : 16}},
+        {attrs: {dy : 17}},
+        {attrs: {dy : 15}},
     ]);
     d3.select('#rmnch .c3-axis-y .domain').attr('d', 'M0,1H0V76')
 }
@@ -493,11 +512,16 @@ var adjust_japan = function() {
 var adjust_world_bank = function() {
     d3.selectAll('#total-commitments .c3-texts-data2').remove();
     move_labels(d3.selectAll('#health-total .c3-texts-data1'), [
-        null, null, null, null,
-        {attrs: {dy : 13}, styles : {fill: '#ffffff'}}
+        null,
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 18}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 16}, styles : {fill: '#ffffff'}},
     ]);
 
     remove_bimulti();
+    d3.selectAll('#no-bimulti-data tspan').text("This chart is not relevant for this agency")
+    d3.select('#total-commitments .c3-axis-y2').remove();
 }
 
 var adjust_gates_foundation = function() {
@@ -510,20 +534,28 @@ var adjust_gates_foundation = function() {
     d3.selectAll('#rmnch .c3-texts-data1 .c3-text-0').remove();
     remove_bimulti();
     d3.select('#total-commitments .c3-axis-y .domain').attr('d', 'M0,1H0V76')
+    d3.select('#total-commitments .c3-axis-y2').remove();
 }
 
 var adjust_france = function() {
     move_labels(d3.selectAll('#total-commitments .c3-texts-data1'), [
-        null,
+        null, null,
         {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
-        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
-        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
-        {attrs: {dy : 13}, styles : {fill: '#ffffff'}}
+        {attrs: {dy : 16}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 20}, styles : {fill: '#ffffff'}}
     ]);
 
     move_labels(d3.selectAll('#total-commitments .c3-texts-data2'), [
         null, null, null, null,
         {attrs: {dy : -3}}
+    ]);
+
+    move_labels(d3.selectAll('#health-total .c3-texts-data1'), [
+        null,
+        null,
+        {attrs: {dy : 10}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 16}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 18}, styles : {fill: '#ffffff'}}
     ]);
 
     move_labels(d3.selectAll('#health-total .c3-texts-data2'), [
@@ -532,11 +564,6 @@ var adjust_france = function() {
         {attrs: {dy : -1}}
     ]);
     d3.select('#total-commitments .c3-axis-y .domain').attr('d', 'M0,1H0V76')
-
-    move_labels(d3.selectAll('#health-total .c3-texts-data1'), [
-        null, null, null, null,
-        {attrs: {dy : 13}, styles : {fill: '#ffffff'}}
-    ]);
 
     d3.select('#health-total .c3-axis-y .domain').attr('d', 'M0,8H0V76')
     d3.select('#rmnch .c3-axis-y .domain').attr('d', 'M0,1H0V76')
@@ -548,15 +575,19 @@ var adjust_germany = function() {
         null,
         {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
         {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
-        {attrs: {dy : 13}, styles : {fill: '#ffffff'}}
+        {attrs: {dy : 16}, styles : {fill: '#ffffff'}}
+    ]);
+
+    move_labels(d3.selectAll('#total-commitments .c3-texts-data2'), [
+        {attrs: {dy : 3}}
     ]);
 
     move_labels(d3.selectAll('#health-total .c3-texts-data1'), [
+        null,
+        null,
         {attrs: {dy : 9}, styles : {fill: '#ffffff'}},
-        null,
-        null,
-        null,
-        {attrs: {dy : 13}, styles : {fill: '#ffffff'}}
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 16}, styles : {fill: '#ffffff'}}
     ]);
     d3.select('#total-commitments .c3-axis-y .domain').attr('d', 'M0,1H0V76')
     d3.select('#health-total .c3-axis-y .domain').attr('d', 'M0,4H0V76')
@@ -568,20 +599,31 @@ var adjust_germany = function() {
 var adjust_italy = function() {
     move_labels(d3.selectAll('#total-commitments .c3-texts-data1'), [
         null,
-        null,
-        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 2}},
+        {attrs: {dy : 16}, styles : {fill: '#ffffff'}},
     ]);
+
+    move_labels(d3.selectAll('#total-commitments .c3-texts-data2'), [
+        {attrs: {dy : 3}},
+        null,
+        null,
+        {attrs: {dy : 2}},
+        {attrs: {dy : 3}},
+    ]);
+
 
     move_labels(d3.selectAll('#health-total .c3-texts-data1'), [
         null,
         null,
         {attrs: {dy : 15}, styles : {fill: '#ffffff'}},
-        {attrs: {dy : 15}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 9}, styles : {fill: '#ffffff'}},
     ]);
 
     d3.select('#total-commitments .c3-axis-y .domain').attr('d', 'M0,1H0V76')
     d3.select('#health-total .c3-axis-y .domain').attr('d', 'M0,8H0V76')
     d3.select('#rmnch .c3-axis-y .domain').attr('d', 'M0,-2H0V76')
+    d3.select('#pledge1 text').remove();
     d3.select('#pledge2').remove();
     d3.select('#pledge3').remove();
     d3.select('#pledge4').remove();
@@ -589,11 +631,17 @@ var adjust_italy = function() {
 
 var adjust_norway = function() {
     move_labels(d3.selectAll('#total-commitments .c3-texts-data1'), [
-        {attrs: {dy : -5}},
-        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
-        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
-        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
-        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        null,
+        null,
+        null,
+        {attrs: {dy : 11}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 17}, styles : {fill: '#ffffff'}},
+    ]);
+
+    move_labels(d3.selectAll('#health-total .c3-texts-data2'), [
+        null,
+        null,
+        {attrs: {dy : 16}},
     ]);
 
     d3.select('#total-commitments .c3-axis-y .domain').attr('d', 'M0,1H0V76')
@@ -603,11 +651,17 @@ var adjust_norway = function() {
 
 var adjust_sweden = function() {
     move_labels(d3.selectAll('#total-commitments .c3-texts-data1'), [
-        {attrs: {dy : -5}},
+        null,
+        null,
         null,
         {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
-        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
-        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 17}, styles : {fill: '#ffffff'}},
+    ]);
+
+    move_labels(d3.selectAll('#health-total .c3-texts-data1'), [
+        null,
+        null,
+        {attrs: {dy : 2}}
     ]);
 
     move_labels(d3.selectAll('#total-commitments .c3-texts-data2'), [
@@ -631,18 +685,25 @@ var adjust_sweden = function() {
 
 var adjust_united_kingdom = function() {
     move_labels(d3.selectAll('#total-commitments .c3-texts-data1'), [
-        {attrs: {dy : -5}},
+        null,
+        {attrs: {dy : 11}, styles : {fill: '#ffffff'}},
         null,
         null,
+        {attrs: {dy : 15}, styles : {fill: '#ffffff'}},
+    ]);
+
+    move_labels(d3.selectAll('#total-commitments .c3-texts-data2'), [
         null,
-        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        null,
+        {attrs: {dy : 15}},
+        {attrs: {dy : 15}},
     ]);
 
     move_labels(d3.selectAll('#health-total .c3-texts-data1'), [
         null,
+        null,
         {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
-        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
-        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 11}, styles : {fill: '#ffffff'}},
     ]);
 
     move_labels(d3.selectAll('#health-total .c3-texts-data2'), [
@@ -650,32 +711,38 @@ var adjust_united_kingdom = function() {
         null,
         null,
         null,
-        {attrs: {dy : 2}},
+        {attrs: {dy : 15}},
     ]);
     d3.select('#total-commitments .c3-axis-y .domain').attr('d', 'M0,1H0V76')
     d3.select('#health-total .c3-axis-y .domain').attr('d', 'M0,2H0V76')
     d3.select('#rmnch .c3-axis-y .domain').attr('d', 'M0,0H0V76')
+    d3.selectAll('.url tspan').style('font-size', '5px');
 }
 
 var adjust_united_states = function() {
 
     move_labels(d3.selectAll('#total-commitments .c3-texts-data1'), [
         null,
-        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
-        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
-        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
-        {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
-    ]);
-
-    move_labels(d3.selectAll('#health-total .c3-texts-data1'), [
         null,
         {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
         {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 17}, styles : {fill: '#ffffff'}},
+    ]);
+
+
+    move_labels(d3.selectAll('#health-total .c3-texts-data1'), [
+        null,
+        null,
         {attrs: {dy : 13}, styles : {fill: '#ffffff'}},
+        {attrs: {dy : 15}, styles : {fill: '#ffffff'}},
     ]);
 
     move_labels(d3.selectAll('#health-total .c3-texts-data2'), [
         {attrs: {dy : -3}},
+        null,
+        null,
+        null,
+        {attrs: {dy : 15}},
     ]);
 
     d3.select('#total-commitments .c3-axis-y .domain').attr('d', 'M0,1H0V76')
