@@ -387,6 +387,7 @@ var move_labels = function(node, adjustments) {
 }
 
 var adjust_russia = function() {
+    remove_oda_line();
     remove_health_total();
     remove_rmnch();
     d3.selectAll('#total-commitments .c3-event-rect').remove();
@@ -401,11 +402,22 @@ var adjust_russia = function() {
     d3.select('#pledge4').remove();
     d3.select('#transparency-block .numerator').text('-');
     d3.select('#pledge1 text').remove();
+
+    d3.select('#bimulti-block')
+        .append('text')
+            .text('No Data')
+            .attr('x', 227)
+            .attr('y', -160)
+            .attr('transform', 'scale(1, -1)')
+            .classed('nodata', true)
+            .style('font-size', '8px')
+            .style('font-family', 'Helvetica LT Std')
+            .style('fill', '#7b7979')
 }
 
 var adjust_australia = function() {
 
-    d3.select('#g8707 text').attr('dx', -65);
+    d3.select('#g8707 text').attr('dx', 0);
     move_labels(d3.selectAll('#total-commitments .c3-texts-data1'), [
         null,
         null,
@@ -444,8 +456,16 @@ var adjust_canada = function() {
     d3.select('#health-total .c3-axis-y .domain').attr('d', 'M0,8H0V82')
 }
 
+var remove_oda_line = function() {
+    d3.select('#g632').remove();
+    d3.select('#text644').remove();
+    d3.select('#commitments-callout .callout-text .callout-text-2').remove();
+    d3.select('#commitments-callout .callout-text .callout-text-3').attr('y', -680.81738);
+}
+
 var adjust_gavi_alliance = function() {
-    d3.select('#g8707 text').attr('dx', -20);
+    d3.select('#g8707 text').attr('dx', 0);
+    remove_oda_line();
     d3.selectAll('#total-commitments .c3-text-0').remove();
     d3.selectAll('#total-commitments .c3-text-1').remove();
     d3.selectAll('#total-commitments .c3-texts-data2 .c3-text-2').remove();
@@ -468,6 +488,7 @@ var adjust_gavi_alliance = function() {
 }
 
 var adjust_global_fund = function() {
+    remove_oda_line();
     d3.select('#g8707 text').attr('dx', -100);
     d3.selectAll('#total-commitments .c3-texts-data1 .c3-text-0').remove();
     d3.selectAll('#total-commitments .c3-texts-data2').remove();
@@ -510,6 +531,7 @@ var adjust_japan = function() {
 }
 
 var adjust_world_bank = function() {
+    remove_oda_line();
     d3.selectAll('#total-commitments .c3-texts-data2').remove();
     move_labels(d3.selectAll('#health-total .c3-texts-data1'), [
         null,
@@ -525,6 +547,7 @@ var adjust_world_bank = function() {
 }
 
 var adjust_gates_foundation = function() {
+    remove_oda_line();
     d3.selectAll('#total-commitments .c3-texts-data2').remove();
     d3.selectAll('#total-commitments .c3-texts-data1 .c3-text-0').remove();
     d3.selectAll('#total-commitments .c3-texts-data1 .c3-text-1').remove();

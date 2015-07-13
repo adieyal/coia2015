@@ -3,7 +3,7 @@ import os
 import base64
 from misc import fon, foz, ion, ioz, clean_filename, format_thousands
 
-FILENAME = "data/data.xlsx"
+FILENAME = "data/data.xls"
 book = xlrd.open_workbook(FILENAME)
 
 
