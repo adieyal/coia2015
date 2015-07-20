@@ -145,10 +145,10 @@ def get_funder_type(data):
         datum = data.setdefault(donor, {})
         
         datum['donor_type'] = {
-            'funder' : values[3].lower() == 'yes',
-            'financial_intermediary' : values[4].lower() == 'yes',
-            'dac_member' : values[5].lower() == 'yes',
-            'crs_reports' : values[6].lower() == 'yes',
+            'funder' : values[4].lower() == 'yes',
+            'financial_intermediary' : values[5].lower() == 'yes',
+            'dac_member' : values[6].lower() == 'yes',
+            'crs_reports' : values[7].lower() == 'yes',
         }
 
 def get_flag(data):
